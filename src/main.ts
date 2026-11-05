@@ -117,7 +117,7 @@ function flameKeys(c: ClassDef, isWeapon: boolean): { key: keyof StatBundle; lab
   const mains = c.special === 'xenon' ? ['STR', 'DEX', 'LUK'] : [c.main];
   const keys: { key: keyof StatBundle; label: string }[] = mains.map((s) => ({ key: s as keyof StatBundle, label: s }));
   for (const s of c.secondary) keys.push({ key: s as keyof StatBundle, label: s });
-  if (isWeapon) keys.push({ key: c.attack, label: c.attack === 'MATT' ? 'MATT' : 'ATT' }); // armour flame ATT is not offered
+  keys.push({ key: c.attack, label: c.attack === 'MATT' ? 'MATT' : 'ATT' }); // every flameable item can roll flat ATT/MATT (wiki Bonus Stats tables: non-weapons, all levels)
   if (c.special !== 'demon-avenger') keys.push({ key: 'ALLp', label: 'All Stat %' });
   if (isWeapon) keys.push({ key: 'BOSSp', label: 'Boss %' }, { key: 'DMGp', label: 'Damage %' });
   return keys;

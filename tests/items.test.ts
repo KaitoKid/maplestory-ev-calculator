@@ -85,3 +85,11 @@ test('Destiny weapons: stage 1 fixed at 22★, stage 2 stars 22→25 with a 10B 
   // Weapon list order: Destiny 2, Destiny 1, Genesis Liberated, Genesis Sealed, Arcane, AbsoLab.
   assert.deepEqual(itemsForSlot('weapon').map((x) => x.id), ['destiny-weapon-2', 'destiny-weapon-1', 'genesis-weapon', 'genesis-weapon-sealed', 'arcane-weapon', 'abso-weapon']);
 });
+
+test('Plasma Heart: level 130 heart capped at 20★, no flames, cubeable', () => {
+  const it = ITEMS.find((i) => i.id === 'plasma-heart')!;
+  assert.equal(it.level, 130);
+  assert.equal(it.maxStars, 20);
+  assert.equal(it.flameable, false);
+  assert.notEqual(it.cubeable, false);
+});

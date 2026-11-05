@@ -58,8 +58,8 @@ A few things to know:
   Bright (22M) cubes from the Heroic Cube Shop; on Interactive you enter what each cube costs. Pocket items,
   badges and Black Heart can't be cubed.
 - **Bonus potential:** Interactive only. Bonus Glowing / Bonus Bright cubes, priced by you.
-- **Flames:** 3M meso resets with Black Rebirth Flame odds, keeping the better result. Weapon flames are
-  the only ones with an ATT field; armor flames are scored on stat lines.
+- **Flames:** 3M meso resets with Black Rebirth Flame odds, keeping the better result. Every flameable item has
+  an ATT (or MATT) field, because armor and accessories can roll flat ATT too; Boss % and Damage % are weapon-only.
 - **Final Damage:** only from the FD values you enter. The app never reads your stat window.
 
 ## How it was built and checked

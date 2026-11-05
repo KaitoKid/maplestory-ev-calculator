@@ -5,7 +5,7 @@ import { CLASS_BY_ID } from '../src/modules/damage.data';
 import { damageModule } from '../src/modules/damage';
 import { starforceModule, modeGroup } from '../src/modules/starforce';
 import { cubeModule } from '../src/modules/cube';
-import { flameModule, flameTargets } from '../src/modules/flame';
+import { flameModule, flameTargets, linePool } from '../src/modules/flame';
 import { sampleNightLord } from './fixtures';
 import { ITEMS, ITEM_BY_ID } from '../src/data/items';
 
@@ -146,4 +146,10 @@ test('the "any upgrade" flame target is a whole-number score and the odds use th
   assert.ok(m, any.label);
   assert.ok(any.pPerFlame > 0 && any.pPerFlame < 1);
   for (const c of t) assert.doesNotMatch(c.label, /\d\.\d/, c.label);
+});
+
+test('armor flame pool includes flat ATT and MATT (wiki Bonus Stats: non-weapons, all levels)', () => {
+  const pool = linePool(150, false);
+  assert.ok(pool.includes('ATT') && pool.includes('MATT'));
+  assert.ok(!pool.includes('BOSS') && !pool.includes('DMG'));
 });

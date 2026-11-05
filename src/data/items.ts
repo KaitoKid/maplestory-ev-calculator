@@ -124,6 +124,7 @@ export const ITEMS: Item[] = [
   it('commanding-force', 'Commanding Force Earring', 'Pitched Boss', 'earring', 200, 1032316),
   it('mitras-rage', "Mitra's Rage", 'Pitched Boss', 'emblem', 200, 1190555, { flame: false, sf: false, iconByClass: byBranch([1190555, 1190557, 1190556, 1190558, 1190559]) }),
   it('total-control', 'Total Control', 'Pitched Boss', 'heart', 200, 'Eqp_Total_Control', { flame: false }), // 30★ per the wiki page
+  it('plasma-heart', 'Plasma Heart', 'Heart', 'heart', 130, 1672099, { flame: false, maxStars: 20 }), // 20★ per the wiki page (Heart Upgrade Module: Plasma, Easy Kaling+)
 
   // ---- Brilliant boss set (lv 250, 30★; MapleStory Wiki item pages). Rings take no flames; the rest are flame advantaged. ----
   it('whisper-of-the-source', 'Whisper of the Source', 'Brilliant Boss', RINGS, 250, 'Eqp_Whisper_of_the_Source', NOFLAME),

@@ -4,7 +4,8 @@ How the app prices a Star Force step, in plain terms. Code: `src/modules/starfor
 
 ## The rules we use (GMS v.271, Nov 2026)
 
-- Items go up to 30★ (weapons only to 25★ for now, because nobody has published 26 to 30★ weapon ATT yet).
+- Items go up to 30★ (weapons only to 25★ for now, because nobody has published 26 to 30★ weapon ATT yet;
+  Plasma Heart stops at 20★ and the Astra secondary at the phase you pick).
 - A failed attempt keeps the star. It never drops.
 - Star catch is gone, and its bonus is always applied. In practice the success chance is the published rate × 1.05.
 - A boom brings the item back with fewer stars: 15 to 19★ go to 12★, 20★ to 15★, 21 to 22★ to 17★, 23 to 25★ to 19★,

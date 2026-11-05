@@ -11,7 +11,8 @@ How the app prices "flame this item until the score reaches N". Code: `src/modul
 So every flame step means "pay 3M a reset until you roll at least this score". There's no item to buy.
 
 Rings, shoulders, badges, emblems, secondaries and hearts can't take flames, so the app never suggests flaming them.
-Only weapons have an ATT field in the flame editor; armor flames are entered as stat lines.
+Every flameable item has an ATT (or MATT) field, because armor and accessories can roll flat ATT as well (1 per
+tier). Boss % and Damage % lines exist only on weapons, so only weapons show those fields.
 
 ## The odds
 
@@ -67,8 +68,6 @@ you hit the target, so a slightly odd score can't make the FD number wrong.
 
 - Level 250 single stat: 12 or 13 per tier? Most GMS tools say 12, one KMS tool says 13. We use 12.
 - Some tools include Speed and Jump on weapons (21 line types). Nexon's table says 19, which we follow.
-- Armor flames can roll flat ATT in the game. The app scores it but doesn't offer it as an input field, because
-  it is never worth aiming for on armor.
 
 ## Sources
 
