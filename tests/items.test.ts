@@ -70,3 +70,18 @@ test('armor sets and weapons carry art for every class', () => {
   assert.ok(perClass.length >= 30);
   for (const it of perClass) for (const c of CLASSES) assert.ok(it.iconByClass![c.id], `${it.id} has no art for ${c.id}`);
 });
+
+test('Destiny weapons: stage 1 fixed at 22★, stage 2 stars 22→25 with a 10B replacement on boom in every world', () => {
+  const s1 = ITEM_BY_ID['destiny-weapon-1'], s2 = ITEM_BY_ID['destiny-weapon-2'];
+  assert.equal(s1.level, 250); assert.equal(s1.starforceable, false); assert.equal(s1.fixedStars, 22); assert.equal(isFlameAdvantaged(s1), true);
+  assert.equal(s2.level, 250); assert.equal(s2.minStars, 22); assert.equal(s2.maxStars, 25); assert.equal(s2.boomCost, 10e9);
+  assert.deepEqual(starforceModule.targets(s2, 22), [23, 24, 25]);
+  const heroic = { ...sampleNightLord().market, server: 'heroic' as const, replacementCost: {} };
+  const c = starforceModule.costDetailed!(s2, 22, 23, heroic);
+  assert.ok(c.expectedBooms! > 0.1, 'a 22→23 attempt booms sometimes');
+  // Mean includes 10B per expected boom on top of attempt mesos, and a boom lands back at 22★ (no re-climb below it).
+  assert.ok(c.mean > c.meanAttemptMesos! + 0.9 * 10e9 * c.expectedBooms!, `${c.mean} vs ${c.meanAttemptMesos} + 10B × ${c.expectedBooms}`);
+  assert.equal(c.policy.length, 1);
+  // Weapon list order: Destiny 2, Destiny 1, Genesis Liberated, Genesis Sealed, Arcane, AbsoLab.
+  assert.deepEqual(itemsForSlot('weapon').map((x) => x.id), ['destiny-weapon-2', 'destiny-weapon-1', 'genesis-weapon', 'genesis-weapon-sealed', 'arcane-weapon', 'abso-weapon']);
+});

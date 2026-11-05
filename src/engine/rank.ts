@@ -107,7 +107,9 @@ export function rank(setup: Setup, cls: ClassDef, m: Modules): RankOutput {
           if (to >= 23 && booms > 0.05) {
             // Past 22★ there is no safeguard. The expected cost already includes booms: a spare re-starred
             // from the trace star with the user's Enhancement settings (plus a replacement where one is priced).
-            notes.push('⚠ Can boom. The cost includes the average cost of a spare, re-starred with your settings.');
+            notes.push(item.boomCost
+              ? `⚠ Can boom. The cost includes a ${(item.boomCost / 1e9).toFixed(0)}B replacement (back at ${item.minStars ?? 0}★) per expected boom.`
+              : '⚠ Can boom. The cost includes the average cost of a spare, re-starred with your settings.');
           }
           out.push({
             slot, kind: 'starforce', label: `${equip.stars}★ → ${to}★`,

@@ -41,7 +41,7 @@ export const WEAPON_OF: Record<string, string> = {
 };
 
 /** Weapon ids per set and weapon type. Hero / Paladin / Dawn Warrior / Evan / Lara pick the common end-game type. */
-export const WEAPON_ART: Record<'abso' | 'arcane' | 'genesis', Record<string, number>> = {
+export const WEAPON_ART: Record<'abso' | 'arcane' | 'genesis' | 'destiny1' | 'destiny2', Record<string, number>> = {
   abso: {
     'Ancient Bow': 1592019, 'Arm Cannon': 1582017, Bladecaster: 1213017, Bow: 1452252, 'Breath Shooter': 1214017, Cane: 1362135,
     Chain: 1272016, Chakram: 1404017, Claw: 1472261, Crossbow: 1462239, Dagger: 1332274, Desperado: 1232109, 'Dual Bowgun': 1522138,
@@ -68,6 +68,27 @@ export const WEAPON_ART: Record<'abso' | 'arcane' | 'genesis', Record<string, nu
     'Pole Arm': 1442285, 'Psy-limiter': 1262051, 'Ritual Fan': 1292022, Scepter: 1252106, 'Shining Rod': 1212129, 'Soul Shooter': 1222122,
     Spear: 1432227, Staff: 1382274, Sword: 1215024, 'Two-Handed Axe': 1412189, 'Two-Handed Blunt': 1422197, 'Two-Handed Sword': 1402268,
     Wand: 1372237, 'Whip Blade': 1242139, 'Celestial Light': 1253021,
+  },
+  // Destiny stage 1 / stage 2 (GMS v270; Kanna's fan is the Spirit Walker Fan there).
+  destiny1: {
+    'Ancient Bow': 1592049, 'Arm Cannon': 1582058, Bladecaster: 1213053, Bow: 1452285, 'Breath Shooter': 1214049,
+    Cane: 1362161, 'Celestial Light': 1253029, Chain: 1272054, Chakram: 1404046, Claw: 1472288, Crossbow: 1462268,
+    Dagger: 1332303, Desperado: 1232135, 'Dual Bowgun': 1522164, Fan: 1254029, Gauntlet: 1282054, Gram: 1433025,
+    Gun: 1492259, 'Hand Cannon': 1532170, Katana: 1542149, Knuckle: 1482245, Lapis: 1562011, 'Martial Brace': 1403052,
+    'One-Handed Axe': 1312226, 'One-Handed Blunt Weapon': 1322279, 'One-Handed Sword': 1302373, 'Pole Arm': 1442299,
+    'Psy-limiter': 1262065, 'Ritual Fan': 1292050, Scepter: 1252129, 'Shining Rod': 1212142, 'Soul Shooter': 1222135,
+    Spear: 1432240, Staff: 1382287, Sword: 1215025, 'Two-Handed Axe': 1412197, 'Two-Handed Blunt': 1422208,
+    'Two-Handed Sword': 1402290, Wand: 1372251, 'Whip Blade': 1242160,
+  },
+  destiny2: {
+    'Ancient Bow': 1592051, 'Arm Cannon': 1582060, Bladecaster: 1213054, Bow: 1452287, 'Breath Shooter': 1214050,
+    Cane: 1362165, 'Celestial Light': 1253040, Chain: 1272055, Chakram: 1404047, Claw: 1472290, Crossbow: 1462270,
+    Dagger: 1332305, Desperado: 1232136, 'Dual Bowgun': 1522167, Fan: 1254090, Gauntlet: 1282056, Gram: 1433026,
+    Gun: 1492261, 'Hand Cannon': 1532172, Katana: 1542151, Knuckle: 1482247, Lapis: 1562012, 'Martial Brace': 1403054,
+    'One-Handed Axe': 1312227, 'One-Handed Blunt Weapon': 1322283, 'One-Handed Sword': 1302376, 'Pole Arm': 1442301,
+    'Psy-limiter': 1262066, 'Ritual Fan': 1292051, Scepter: 1252131, 'Shining Rod': 1212145, 'Soul Shooter': 1222136,
+    Spear: 1432242, Staff: 1382289, Sword: 1215041, 'Two-Handed Axe': 1412198, 'Two-Handed Blunt': 1422210,
+    'Two-Handed Sword': 1402295, Wand: 1372252, 'Whip Blade': 1242161,
   },
 };
 

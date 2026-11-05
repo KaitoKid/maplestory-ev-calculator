@@ -201,7 +201,7 @@ function equipEditor(slot: EquipSlot): HTMLElement {
       const prev = state.equips[target];
       const e = prev && prev.itemId === v ? prev : emptyEquip(target);
       e.itemId = v;
-      e.stars = it.fixedStars ?? Math.min(e.stars, it.maxStars);
+      e.stars = it.fixedStars ?? Math.max(it.minStars ?? 0, Math.min(e.stars, it.maxStars));
       if (!it.flameable) e.flame = {};
       state.equips[target] = e;
     }
@@ -220,7 +220,7 @@ function equipEditor(slot: EquipSlot): HTMLElement {
   if (!eq || !item) return h('div', { class: 'editor', tabindex: -1 }, head, picker);
 
   const stars = item.starforceable
-    ? h('label', { class: 'stars' }, '★', num(eq.stars, (v) => { eq.stars = Math.max(0, Math.min(item.maxStars, Math.round(v ?? 0))); changed(); }, { class: 'w-star', min: 0, max: item.maxStars, 'aria-label': `${label} stars` }), h('span', { class: 'max' }, `/ ${item.maxStars}`))
+    ? h('label', { class: 'stars' }, '★', num(eq.stars, (v) => { eq.stars = Math.max(item.minStars ?? 0, Math.min(item.maxStars, Math.round(v ?? 0))); changed(); }, { class: 'w-star', min: item.minStars ?? 0, max: item.maxStars, 'aria-label': `${label} stars` }), h('span', { class: 'max' }, `/ ${item.maxStars}`))
     : h('span', { class: 'stars fixed' }, item.fixedStars ? `★ ${item.fixedStars} fixed` : 'No Star Force');
   const weaponAtt = eff === 'weapon'
     ? h('label', { class: 'baseatt' }, h('span', {}, `Clean ${c.attack} `, tip(`The weapon's own ${c.attack} before Star Force, flame and scrolls: the first (white) number in the in-game tooltip. Star Force ${c.attack} is added on top by the calculator, so do not include it.`)), num(eq.baseAtt ?? item.base[c.attack], (v) => { eq.baseAtt = v; changed(); }, { class: 'w-att', title: `Clean ${c.attack}: before Star Force, flame and scrolls` }))

@@ -139,6 +139,10 @@ export interface ItemDef {
   flameable: boolean;
   /** Can starforce? */
   starforceable: boolean;
+  /** Lowest star the item can have (Destiny stage 2 starts at 22★ and a boom replaces it at 22★). */
+  minStars?: number;
+  /** Boom replacement cost in every world (Destiny stage 2: 10B from the Ark of Determination). */
+  boomCost?: number;
   /** Icon in public/icons: a maplestory.io item id, or a MapleStory Wiki file name (Eqp_*). */
   iconId?: number | string;
   weaponType?: string;

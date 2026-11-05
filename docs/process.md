@@ -77,7 +77,8 @@ count gave 8.35% per flame against the app's 8.36%, and the MapleStory Wiki conf
 - GMS does not publish cube or flame odds. We use Nexon's Korean tables, like every public calculator. The items and
   line lists match, but the hidden odds could still differ.
 - Enhancement Mode success and boom rates were measured by players. Nexon hasn't published them.
-- Weapons stop at 25★ because nobody has published 26 to 30★ weapon ATT yet.
+- Weapons stop at 25★ because nobody has published 26 to 30★ weapon ATT yet. Destiny weapons use the level 200
+  weapon ATT-per-star table, because no level 250 column has been published either.
 - Your FD values are only as good as the tool you read them from. Rounding there is the biggest source of error.
 
 ## Sources

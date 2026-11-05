@@ -22,7 +22,7 @@ export type Item = ItemDef & {
 
 const maxStarsFor = (level: number) => (level >= 138 ? 30 : level >= 128 ? 20 : level >= 108 ? 15 : 10);
 
-interface Opt { flame?: boolean; sf?: boolean; base?: StatBundle; superior?: boolean; fa?: boolean; maxStars?: number; fixedStars?: number; cubeable?: boolean; iconByClass?: Record<string, number | string> }
+interface Opt { flame?: boolean; sf?: boolean; base?: StatBundle; superior?: boolean; fa?: boolean; maxStars?: number; minStars?: number; fixedStars?: number; boomCost?: number; cubeable?: boolean; iconByClass?: Record<string, number | string> }
 function it(id: string, name: string, set: string, slot: EquipSlot | EquipSlot[], level: number, iconId: number | string | undefined, o: Opt = {}): Item {
   const sf = o.sf ?? true;
   return {
@@ -34,6 +34,8 @@ function it(id: string, name: string, set: string, slot: EquipSlot | EquipSlot[]
     starforceable: sf,
     ...(o.fa !== undefined ? { flameAdvantaged: o.fa } : {}),
     ...(o.fixedStars !== undefined ? { fixedStars: o.fixedStars } : {}),
+    ...(o.minStars !== undefined ? { minStars: o.minStars } : {}),
+    ...(o.boomCost !== undefined ? { boomCost: o.boomCost } : {}),
     ...(o.cubeable !== undefined ? { cubeable: o.cubeable } : {}),
     ...(o.iconByClass ? { iconByClass: o.iconByClass } : {}),
   };
@@ -99,12 +101,17 @@ export const ITEMS: Item[] = [
   it('tyrant-gloves', 'Tyrant Gloves', 'Tyrant', 'gloves', 150, 1082543, { superior: true, iconByClass: byBranch([1082543, 1082544, 1082545, 1082546, 1082547]) }),
   it('tyrant-belt', 'Tyrant Belt', 'Tyrant', 'belt', 150, 1132174, { superior: true, iconByClass: byBranch([1132174, 1132175, 1132176, 1132177, 1132178]) }),
 
-  // ---- Weapons (base ATT is a default; edit per weapon type) ----
-  it('abso-weapon', 'AbsoLab Weapon', 'AbsoLab', 'weapon', 160, 1302333, { base: { ATT: 197, MATT: 241 }, iconByClass: byWeapon('abso') }),
-  it('arcane-weapon', 'Arcane Umbra Weapon', 'Arcane Umbra', 'weapon', 200, 1402259, { base: { ATT: 283, MATT: 347 }, iconByClass: byWeapon('arcane') }),
+  // ---- Weapons (base ATT is a default for a two-handed sword / staff; edit per weapon type). Listed best first. ----
+  // Destiny (MapleStory Wiki, Destiny Weapon): Lv 250, flame advantaged, upgraded from a liberated Genesis weapon.
+  // Stage 1 is fixed at 22★. Stage 2 can be starred 22★ → 25★; a boom is replaced by the Ark of Determination's
+  // 10B box (a fresh stage-2 weapon at 22★), in every world.
+  it('destiny-weapon-2', 'Destiny Weapon (Stage 2)', 'Destiny', 'weapon', 250, 1402295, { ...FA, minStars: 22, maxStars: 25, boomCost: 10e9, base: { ATT: 373, MATT: 445 }, iconByClass: byWeapon('destiny2') }),
+  it('destiny-weapon-1', 'Destiny Weapon (Stage 1)', 'Destiny', 'weapon', 250, 1402290, { ...FA, sf: false, fixedStars: 22, base: { ATT: 373, MATT: 445 }, iconByClass: byWeapon('destiny1') }),
   // Genesis: the sealed weapon has the same base stats but no Star Force until liberation, which fixes it at 22★.
   it('genesis-weapon', 'Genesis Weapon (Liberated)', 'Genesis', 'weapon', 200, 1402268, { sf: false, fixedStars: 22, base: { ATT: 340, MATT: 418 }, iconByClass: byWeapon('genesis') }),
   it('genesis-weapon-sealed', 'Genesis Weapon (Sealed)', 'Genesis', 'weapon', 200, 1402268, { sf: false, base: { ATT: 340, MATT: 418 }, iconByClass: byWeapon('genesis') }),
+  it('arcane-weapon', 'Arcane Umbra Weapon', 'Arcane Umbra', 'weapon', 200, 1402259, { base: { ATT: 283, MATT: 347 }, iconByClass: byWeapon('arcane') }),
+  it('abso-weapon', 'AbsoLab Weapon', 'AbsoLab', 'weapon', 160, 1302333, { base: { ATT: 197, MATT: 241 }, iconByClass: byWeapon('abso') }),
 
   // ---- Pitched boss set ----
   it('berserked', 'Berserked', 'Pitched Boss', 'face', 160, 1012632),
@@ -190,5 +197,5 @@ export function itemsForSlot(slot: EquipSlot): Item[] {
 export const DEFAULT_REPLACEMENT: Record<string, number> = {
   'Chaos Root Abyss': 1.5e9, AbsoLab: 1.5e9, 'Arcane Umbra': 4e9, Eternal: 15e9, Tyrant: 5e9,
   'Pitched Boss': 15e9, 'Brilliant Boss': 30e9, 'Superior Gollux': 2e9, 'Dawn Boss': 1e9,
-  'Boss Accessory': 0.5e9, Meister: 1e9, Astra: 1e9,
+  'Boss Accessory': 0.5e9, Meister: 1e9, Astra: 1e9, Destiny: 10e9,
 };

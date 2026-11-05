@@ -125,6 +125,8 @@ export function profileToPlan(profile: ModeProfile): Partial<Record<number, Mode
 
 export interface SfOptions {
   superior?: boolean;
+  /** A boom never drops below this star (Destiny stage 2: the replacement comes at 22★). */
+  floorStar?: number;
   /** MVP discount percent: 0, 3, 5 or 10. */
   mvpDiscount?: number;
   /** 30% off (Shining Star Force / Special Sunny Sunday). Not applied to the safeguard premium. */
@@ -169,7 +171,7 @@ export function starActions(itemLevel: number, star: number, o: SfOptions): Tran
   const mvp = star <= 16 ? (o.mvpDiscount ?? 0) / 100 : 0;
   const disc = (o.thirtyOff ? 0.7 : 1) * (1 - mvp);
   const next = o.onePlusOne && star <= 10 ? star + 2 : star + 1;
-  const boomTo = boomRestoreStar(star);
+  const boomTo = Math.max(boomRestoreStar(star), o.floorStar ?? 0);
   const boomMul = o.boomReduction && star <= 21 ? 0.7 : 1;
 
   if (o.fiveTenFifteen && (star === 5 || star === 10 || star === 15)) {
@@ -593,7 +595,8 @@ export function optionsFromMarket(item: ItemDef, market: MarketSettings): SfOpti
     starCatch: true,
     safeguard: market.safeguard,
     ...modeOptions(item, x),
-    replacementCost: market.replacementCost[item.id] ?? market.replacementCost[item.set] ?? 0,
+    replacementCost: item.boomCost ?? market.replacementCost[item.id] ?? market.replacementCost[item.set] ?? 0,
+    ...(item.minStars ? { floorStar: item.minStars } : {}),
   };
 }
 

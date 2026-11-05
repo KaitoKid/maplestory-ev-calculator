@@ -52,7 +52,8 @@ A few things to know:
 - **Star Force:** current GMS rules (v.271). 30★ cap, failed attempts keep the star, star catch always on,
   Enhancement Mode. By default normal items use modes 1-1-4-4 at 18 to 21★, Pitched and Brilliant items use
   4-4-4-4, and 15 to 17★ are safeguarded. All of this is editable. Booms cost nothing extra on Heroic / Reboot.
-  On Interactive you enter what a replacement item costs. Badges and Black Heart can't be starred.
+  On Interactive you enter what a replacement item costs. Badges and Black Heart can't be starred. Destiny stage 2
+  weapons star from 22★ to 25★ with a 10B replacement per boom in every world.
 - **Cubes:** every item is already Legendary, so there are no tier-ups. Heroic uses Glowing (12M) and
   Bright (22M) cubes from the Heroic Cube Shop; on Interactive you enter what each cube costs. Pocket items,
   badges and Black Heart can't be cubed.

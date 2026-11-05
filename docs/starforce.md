@@ -13,6 +13,8 @@ How the app prices a Star Force step, in plain terms. Code: `src/modules/starfor
 - Safeguard (15 to 17★) removes the boom chance and costs three times a normal attempt (before discounts).
 - Enhancement Mode levels 2 to 4 (15 to 21★) cost more per attempt and lower the boom chance. Level 4 can't boom.
 - Badges, Black Heart and the sealed Genesis weapon can't be starred. Liberated Genesis weapons are fixed at 22★.
+- Destiny weapons (Lv 250): stage 1 is fixed at 22★. Stage 2 can go from 22★ to 25★, and a boom is replaced by the
+  10B box from the Ark of Determination (a fresh stage-2 weapon at 22★), in every world including Heroic.
 - Astra secondaries unlock stars in phases. Pick the phase you have (15★, 20★ or 30★) and the plan only stars that far.
 
 Success and boom chances for each star (the rest of the time the star stays):
