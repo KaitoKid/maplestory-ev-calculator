@@ -1,0 +1,72 @@
+// Item data checks against the MapleStory Wiki item pages (levels, slots, star caps, flame rules).
+import { test } from 'node:test';
+import fs from 'node:fs';
+import assert from 'node:assert/strict';
+import { ITEMS, ITEM_BY_ID, itemsForSlot } from '../src/data/items';
+import { isFlameAdvantaged } from '../src/modules/flame';
+import { rank } from '../src/engine/rank';
+import { CLASS_BY_ID, CLASSES } from '../src/modules/damage.data';
+import { damageModule } from '../src/modules/damage';
+import { starforceModule } from '../src/modules/starforce';
+import { cubeModule } from '../src/modules/cube';
+import { flameModule } from '../src/modules/flame';
+import { emptyEquip } from '../src/state';
+import { sampleNightLord } from './fixtures';
+
+test('Superior Gollux and Dawn boss sets: level, slot, 30★ cap, flames', () => {
+  const want: [string, number, string, boolean, boolean | null][] = [
+    // id, level, slot, flameable, flame advantaged
+    ['gollux-ring', 150, 'ring1', false, null],
+    ['gollux-earring', 150, 'earring', true, false],
+    ['gollux-pendant', 150, 'pendant1', true, false],
+    ['gollux-belt', 150, 'belt', true, false],
+    ['twilight-mark', 140, 'face', true, true],
+    ['estella-earrings', 160, 'earring', true, true],
+    ['daybreak-pendant', 140, 'pendant2', true, true],
+    ['dawn-guardian-ring', 160, 'ring4', false, null],
+  ];
+  for (const [id, level, slot, flame, fa] of want) {
+    const it = ITEM_BY_ID[id];
+    assert.ok(it, id);
+    assert.equal(it.level, level, id);
+    assert.ok(itemsForSlot(slot as never).includes(it), `${id} in ${slot}`);
+    assert.equal(it.maxStars, 30, id);
+    assert.equal(it.flameable, flame, id);
+    if (fa !== null) assert.equal(isFlameAdvantaged(it), fa, id);
+  }
+});
+
+test('rings, shoulders, badges, emblems, secondaries and hearts take no flames', () => {
+  for (const it of ITEMS) {
+    const slots = Array.isArray(it.slot) ? it.slot : [it.slot];
+    if (slots.some((s) => /^(ring\d|shoulder|badge|emblem|secondary|heart)$/.test(s))) assert.equal(it.flameable, false, it.id);
+  }
+});
+
+test('Gollux and Dawn items get Star Force, cube and flame steps', () => {
+  const s = sampleNightLord();
+  s.equips.belt = { ...emptyEquip('belt', 'gollux-belt'), stars: 17, pot: [{ key: 'LUKp', value: 9 }] };
+  s.equips.face = { ...emptyEquip('face', 'twilight-mark'), stars: 17, pot: [{ key: 'LUKp', value: 9 }] };
+  const r = rank(s, CLASS_BY_ID['night-lord'], { damage: damageModule, starforce: starforceModule, cube: cubeModule, flame: flameModule });
+  for (const slot of ['belt', 'face'] as const) {
+    for (const kind of ['starforce', 'cube', 'flame']) assert.ok(r.candidates.some((c) => c.slot === slot && c.kind === kind), `${slot} ${kind}`);
+  }
+});
+
+test('every item icon, including the per-class art, is bundled in public/icons', () => {
+  const missing: string[] = [];
+  for (const it of ITEMS) {
+    const ids = new Set<string | number>();
+    if (it.iconId) ids.add(it.iconId);
+    for (const v of Object.values(it.iconByClass ?? {})) ids.add(v);
+    for (const id of ids) if (!fs.existsSync(`public/icons/${id}.png`)) missing.push(`${it.id}: ${id}`);
+  }
+  assert.deepEqual(missing, []);
+});
+
+test('armor sets and weapons carry art for every class', () => {
+  // Secondaries are the exception: Zero has none and Beast Tamer's Astra secondary doesn't exist.
+  const perClass = ITEMS.filter((it) => it.iconByClass && it.slot !== 'secondary');
+  assert.ok(perClass.length >= 30);
+  for (const it of perClass) for (const c of CLASSES) assert.ok(it.iconByClass![c.id], `${it.id} has no art for ${c.id}`);
+});

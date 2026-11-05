@@ -1,0 +1,20 @@
+{
+  "name": "maplestory-ev-calculator",
+  "version": "1.0.0",
+  "description": "Rank MapleStory upgrades by meso per 1% Final Damage (Heroic/Reboot)",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -p . && vite build",
+    "preview": "vite preview",
+    "test": "tsx --test src/modules/*.test.ts tests/*.test.ts"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.2",
+    "tsx": "^4.19.2",
+    "typescript": "^5.6.3",
+    "vite": "^5.4.11",
+    "vitest": "^2.1.8"
+  },
+  "private": true,
+  "type": "module"
+}

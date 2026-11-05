@@ -1,0 +1,3136 @@
+{
+ "description": "Star Force test vectors for starforce.ts (GMS v.271 rules). Costs are attempt mesos only (replacementCost = 0) so they match public calculators, which do not price boom replacements. Use starforceModule.cost(item{level,superior:false}, from, to, market) or expectedStarforceCost(level, from, to, options, false).",
+ "generated": "2026-11-05",
+ "baseAttemptCost": [
+  {
+   "level": 200,
+   "star": 16,
+   "expected": 83999600,
+   "source": "starforce.tadeucci.dev simulator.js comment: in-game lv200 16→17 base 83,999,600 (2026-08-02)"
+  },
+  {
+   "level": 250,
+   "star": 18,
+   "enhanceMode": 4,
+   "expected": 4114061250,
+   "source": "tadeucci comment: lv250 18→19 Mode 4 = 4.114B in-game"
+  },
+  {
+   "level": 250,
+   "star": 18,
+   "enhanceMode": 4,
+   "thirtyOff": true,
+   "expected": 2879842875,
+   "source": "tadeucci comment: same with Shining Star Force = 2.879B in-game"
+  },
+  {
+   "level": 200,
+   "star": 16,
+   "thirtyOff": true,
+   "mvpDiscount": 3,
+   "expected": 57035728,
+   "tolerance": 1,
+   "source": "tadeucci comment: in-game 57,035,729 (we get 57,035,728; 1-meso rounding difference)"
+  }
+ ],
+ "expectedCost": [
+  {
+   "level": 200,
+   "from": 22,
+   "to": 25,
+   "options": {
+    "safeguard": "always",
+    "enhanceMode": "off",
+    "thirtyOff": true,
+    "boomReduction": true
+   },
+   "expectedMean": 285030000000,
+   "expectedBooms": 46.6,
+   "relTolerance": 0.001,
+   "source": {
+    "name": "BlueMagic + maple-mochachai benchmark",
+    "url": "https://maple-mochachai.pages.dev/star_force/",
+    "value": "Exact 285.1B / 47 booms (ceil); BlueMagic 285.03B / 46.6"
+   }
+  },
+  {
+   "level": 200,
+   "from": 22,
+   "to": 25,
+   "options": {
+    "safeguard": "always",
+    "enhanceMode": "off",
+    "thirtyOff": true,
+    "boomReduction": true,
+    "mvpDiscount": 0
+   },
+   "market": {
+    "mvpDiscount": 0,
+    "sf30Off": true,
+    "sfBoomReduction": true,
+    "sf51015": false,
+    "sf1plus1": false,
+    "starCatch": true,
+    "safeguard": "always",
+    "sfEnhanceMode": "off",
+    "replacementCost": {},
+    "mesoPerFlame": 3000000,
+    "cubeCostOverride": {}
+   },
+   "expectedMean": 285027145751.25006,
+   "expectedBooms": 46.56437743051324,
+   "relTolerance": 0.000001,
+   "source": {
+    "name": "maple-mochachai exact solver (rounds UP to 0.1B and whole booms)",
+    "url": "https://maple-mochachai.pages.dev/star_force/",
+    "value": "285.1 B, 47 booms"
+   }
+  },
+  {
+   "level": 200,
+   "from": 17,
+   "to": 22,
+   "options": {
+    "safeguard": "always",
+    "enhanceMode": "off",
+    "thirtyOff": false,
+    "boomReduction": false,
+    "mvpDiscount": 0
+   },
+   "market": {
+    "mvpDiscount": 0,
+    "sf30Off": false,
+    "sfBoomReduction": false,
+    "sf51015": false,
+    "sf1plus1": false,
+    "starCatch": true,
+    "safeguard": "always",
+    "sfEnhanceMode": "off",
+    "replacementCost": {},
+    "mesoPerFlame": 3000000,
+    "cubeCostOverride": {}
+   },
+   "expectedMean": 39536566587.02255,
+   "expectedBooms": 4.238986939981017,
+   "relTolerance": 0.000001,
+   "source": {
+    "name": "maple-mochachai exact solver (rounds UP to 0.1B and whole booms)",
+    "url": "https://maple-mochachai.pages.dev/star_force/",
+    "value": "39.6 B, 5 booms"
+   }
+  },
+  {
+   "level": 200,
+   "from": 17,
+   "to": 22,
+   "options": {
+    "safeguard": "never",
+    "enhanceMode": "off",
+    "thirtyOff": false,
+    "boomReduction": false,
+    "mvpDiscount": 0
+   },
+   "market": {
+    "mvpDiscount": 0,
+    "sf30Off": false,
+    "sfBoomReduction": false,
+    "sf51015": false,
+    "sf1plus1": false,
+    "starCatch": true,
+    "safeguard": "never",
+    "sfEnhanceMode": "off",
+    "replacementCost": {},
+    "mesoPerFlame": 3000000,
+    "cubeCostOverride": {}
+   },
+   "expectedMean": 31296211406.146046,
+   "expectedBooms": 7.246025563437196,
+   "relTolerance": 0.000001,
+   "source": {
+    "name": "maple-mochachai exact solver (rounds UP to 0.1B and whole booms)",
+    "url": "https://maple-mochachai.pages.dev/star_force/",
+    "value": "31.3 B, 8 booms"
+   }
+  },
+  {
+   "level": 200,
+   "from": 0,
+   "to": 22,
+   "options": {
+    "safeguard": "never",
+    "enhanceMode": "off",
+    "thirtyOff": true,
+    "boomReduction": true,
+    "mvpDiscount": 10
+   },
+   "market": {
+    "mvpDiscount": 10,
+    "sf30Off": true,
+    "sfBoomReduction": true,
+    "sf51015": false,
+    "sf1plus1": false,
+    "starCatch": true,
+    "safeguard": "never",
+    "sfEnhanceMode": "off",
+    "replacementCost": {},
+    "mesoPerFlame": 3000000,
+    "cubeCostOverride": {}
+   },
+   "expectedMean": 15909484691.077341,
+   "expectedBooms": 3.816173526441969,
+   "relTolerance": 0.000001,
+   "source": {
+    "name": "maple-mochachai exact solver (rounds UP to 0.1B and whole booms)",
+    "url": "https://maple-mochachai.pages.dev/star_force/",
+    "value": "16.0 B, 4 booms"
+   }
+  },
+  {
+   "level": 160,
+   "from": 15,
+   "to": 22,
+   "options": {
+    "safeguard": "always",
+    "enhanceMode": "off",
+    "thirtyOff": false,
+    "boomReduction": true,
+    "mvpDiscount": 5
+   },
+   "market": {
+    "mvpDiscount": 5,
+    "sf30Off": false,
+    "sfBoomReduction": true,
+    "sf51015": false,
+    "sf1plus1": false,
+    "starCatch": true,
+    "safeguard": "always",
+    "sfEnhanceMode": "off",
+    "replacementCost": {},
+    "mesoPerFlame": 3000000,
+    "cubeCostOverride": {}
+   },
+   "expectedMean": 14789185626.636192,
+   "expectedBooms": 2.426309720400557,
+   "relTolerance": 0.000001,
+   "source": {
+    "name": "maple-mochachai exact solver (rounds UP to 0.1B and whole booms)",
+    "url": "https://maple-mochachai.pages.dev/star_force/",
+    "value": "14.8 B, 3 booms"
+   }
+  },
+  {
+   "level": 250,
+   "from": 15,
+   "to": 22,
+   "options": {
+    "safeguard": "never",
+    "enhanceMode": "off",
+    "thirtyOff": false,
+    "boomReduction": false,
+    "mvpDiscount": 0
+   },
+   "market": {
+    "mvpDiscount": 0,
+    "sf30Off": false,
+    "sfBoomReduction": false,
+    "sf51015": false,
+    "sf1plus1": false,
+    "starCatch": true,
+    "safeguard": "never",
+    "sfEnhanceMode": "off",
+    "replacementCost": {},
+    "mesoPerFlame": 3000000,
+    "cubeCostOverride": {}
+   },
+   "expectedMean": 62349337324.263336,
+   "expectedBooms": 7.380757762983688,
+   "relTolerance": 0.000001,
+   "source": {
+    "name": "maple-mochachai exact solver (rounds UP to 0.1B and whole booms)",
+    "url": "https://maple-mochachai.pages.dev/star_force/",
+    "value": "62.4 B, 8 booms"
+   }
+  },
+  {
+   "level": 250,
+   "from": 22,
+   "to": 24,
+   "options": {
+    "safeguard": "never",
+    "enhanceMode": "off",
+    "thirtyOff": true,
+    "boomReduction": true,
+    "mvpDiscount": 0
+   },
+   "market": {
+    "mvpDiscount": 0,
+    "sf30Off": true,
+    "sfBoomReduction": true,
+    "sf51015": false,
+    "sf1plus1": false,
+    "starCatch": true,
+    "safeguard": "never",
+    "sfEnhanceMode": "off",
+    "replacementCost": {},
+    "mesoPerFlame": 3000000,
+    "cubeCostOverride": {}
+   },
+   "expectedMean": 133983065273.68459,
+   "expectedBooms": 20.43322752328259,
+   "relTolerance": 0.000001,
+   "source": {
+    "name": "maple-mochachai exact solver (rounds UP to 0.1B and whole booms)",
+    "url": "https://maple-mochachai.pages.dev/star_force/",
+    "value": "134.0 B, 21 booms"
+   }
+  },
+  {
+   "level": 150,
+   "from": 12,
+   "to": 21,
+   "options": {
+    "safeguard": "always",
+    "enhanceMode": "off",
+    "thirtyOff": true,
+    "boomReduction": false,
+    "mvpDiscount": 3
+   },
+   "market": {
+    "mvpDiscount": 3,
+    "sf30Off": true,
+    "sfBoomReduction": false,
+    "sf51015": false,
+    "sf1plus1": false,
+    "starCatch": true,
+    "safeguard": "always",
+    "sfEnhanceMode": "off",
+    "replacementCost": {},
+    "mesoPerFlame": 3000000,
+    "cubeCostOverride": {}
+   },
+   "expectedMean": 7835352742.408502,
+   "expectedBooms": 1.9067034541506258,
+   "relTolerance": 0.000001,
+   "source": {
+    "name": "maple-mochachai exact solver (rounds UP to 0.1B and whole booms)",
+    "url": "https://maple-mochachai.pages.dev/star_force/",
+    "value": "7.9 B, 2 booms"
+   }
+  },
+  {
+   "level": 150,
+   "from": 0,
+   "to": 15,
+   "options": {
+    "safeguard": "never",
+    "enhanceMode": "off"
+   },
+   "market": {
+    "mvpDiscount": 0,
+    "sf30Off": false,
+    "sfBoomReduction": false,
+    "sf51015": false,
+    "sf1plus1": false,
+    "starCatch": true,
+    "safeguard": "never",
+    "sfEnhanceMode": "off",
+    "replacementCost": {},
+    "mesoPerFlame": 3000000,
+    "cubeCostOverride": {}
+   },
+   "expectedMean": 419795966.2037473,
+   "expectedBooms": 0,
+   "relTolerance": 1e-9,
+   "source": {
+    "name": "starforce.tadeucci.dev optimizer.planMetrics (exact)",
+    "url": "https://starforce.tadeucci.dev/"
+   }
+  },
+  {
+   "level": 150,
+   "from": 0,
+   "to": 15,
+   "options": {
+    "safeguard": "never",
+    "enhanceMode": 2
+   },
+   "market": {
+    "mvpDiscount": 0,
+    "sf30Off": false,
+    "sfBoomReduction": false,
+    "sf51015": false,
+    "sf1plus1": false,
+    "starCatch": true,
+    "safeguard": "never",
+    "sfEnhanceMode": 2,
+    "replacementCost": {},
+    "mesoPerFlame": 3000000,
+    "cubeCostOverride": {}
+   },
+   "expectedMean": 419795966.2037473,
+   "expectedBooms": 0,
+   "relTolerance": 1e-9,
+   "source": {
+    "name": "starforce.tadeucci.dev optimizer.planMetrics (exact)",
+    "url": "https://starforce.tadeucci.dev/"
+   }
+  },
+  {
+   "level": 150,
+   "from": 0,
+   "to": 15,
+   "options": {
+    "safeguard": "never",
+    "enhanceMode": 4,
+    "mvpDiscount": 10
+   },
+   "market": {
+    "mvpDiscount": 10,
+    "sf30Off": false,
+    "sfBoomReduction": false,
+    "sf51015": false,
+    "sf1plus1": false,
+    "starCatch": true,
+    "safeguard": "never",
+    "sfEnhanceMode": 4,
+    "replacementCost": {},
+    "mesoPerFlame": 3000000,
+    "cubeCostOverride": {}
+   },
+   "expectedMean": 377816369.5833726,
+   "expectedBooms": 0,
+   "relTolerance": 1e-9,
+   "source": {
+    "name": "starforce.tadeucci.dev optimizer.planMetrics (exact)",
+    "url": "https://starforce.tadeucci.dev/"
+   }
+  },
+  {
+   "level": 150,
+   "from": 12,
+   "to": 17,
+   "options": {
+    "safeguard": "never",
+    "enhanceMode": "off"
+   },
+   "market": {
+    "mvpDiscount": 0,
+    "sf30Off": false,
+    "sfBoomReduction": false,
+    "sf51015": false,
+    "sf1plus1": false,
+    "starCatch": true,
+    "safeguard": "never",
+    "sfEnhanceMode": "off",
+    "replacementCost": {},
+    "mesoPerFlame": 3000000,
+    "cubeCostOverride": {}
+   },
+   "expectedMean": 636699335.5651684,
+   "expectedBooms": 0.13473219954648524,
+   "relTolerance": 1e-9,
+   "source": {
+    "name": "starforce.tadeucci.dev optimizer.planMetrics (exact)",
+    "url": "https://starforce.tadeucci.dev/"
+   }
+  },
+  {
+   "level": 150,
+   "from": 12,
+   "to": 17,
+   "options": {
+    "safeguard": "never",
+    "enhanceMode": 2
+   },
+   "market": {
+    "mvpDiscount": 0,
+    "sf30Off": false,
+    "sfBoomReduction": false,
+    "sf51015": false,
+    "sf1plus1": false,
+    "starCatch": true,
+    "safeguard": "never",
+    "sfEnhanceMode": 2,
+    "replacementCost": {},
+    "mesoPerFlame": 3000000,
+    "cubeCostOverride": {}
+   },
+   "expectedMean": 723635409.2439752,
+   "expectedBooms": 0.08887568657092466,
+   "relTolerance": 1e-9,
+   "source": {
+    "name": "starforce.tadeucci.dev optimizer.planMetrics (exact)",
+    "url": "https://starforce.tadeucci.dev/"
+   }
+  },
+  {
+   "level": 150,
+   "from": 12,
+   "to": 17,
+   "options": {
+    "safeguard": "never",
+    "enhanceMode": 4,
+    "mvpDiscount": 10
+   },
+   "market": {
+    "mvpDiscount": 10,
+    "sf30Off": false,
+    "sfBoomReduction": false,
+    "sf51015": false,
+    "sf1plus1": false,
+    "starCatch": true,
+    "safeguard": "never",
+    "sfEnhanceMode": 4,
+    "replacementCost": {},
+    "mesoPerFlame": 3000000,
+    "cubeCostOverride": {}
+   },
+   "expectedMean": 822503834.4073969,
+   "expectedBooms": 0.04396495338876291,
+   "relTolerance": 1e-9,
+   "source": {
+    "name": "starforce.tadeucci.dev optimizer.planMetrics (exact)",
+    "url": "https://starforce.tadeucci.dev/"
+   }
+  },
+  {
+   "level": 150,
+   "from": 15,
+   "to": 18,
+   "options": {
+    "safeguard": "never",
+    "enhanceMode": "off"
+   },
+   "market": {
+    "mvpDiscount": 0,
+    "sf30Off": false,
+    "sfBoomReduction": false,
+    "sf51015": false,
+    "sf1plus1": false,
+    "starCatch": true,
+    "safeguard": "never",
+    "sfEnhanceMode": "off",
+    "replacementCost": {},
+    "mesoPerFlame": 3000000,
+    "cubeCostOverride": {}
+   },
+   "expectedMean": 886936259.8460269,
+   "expectedBooms": 0.6203255344635208,
+   "relTolerance": 1e-9,
+   "source": {
+    "name": "starforce.tadeucci.dev optimizer.planMetrics (exact)",
+    "url": "https://starforce.tadeucci.dev/"
+   }
+  },
+  {
+   "level": 150,
+   "from": 15,
+   "to": 18,
+   "options": {
+    "safeguard": "never",
+    "enhanceMode": 2
+   },
+   "market": {
+    "mvpDiscount": 0,
+    "sf30Off": false,
+    "sfBoomReduction": false,
+    "sf51015": false,
+    "sf1plus1": false,
+    "starCatch": true,
+    "safeguard": "never",
+    "sfEnhanceMode": 2,
+    "replacementCost": {},
+    "mesoPerFlame": 3000000,
+    "cubeCostOverride": {}
+   },
+   "expectedMean": 1069980310.6506121,
+   "expectedBooms": 0.38010672337600526,
+   "relTolerance": 1e-9,
+   "source": {
+    "name": "starforce.tadeucci.dev optimizer.planMetrics (exact)",
+    "url": "https://starforce.tadeucci.dev/"
+   }
+  },
+  {
+   "level": 150,
+   "from": 15,
+   "to": 18,
+   "options": {
+    "safeguard": "never",
+    "enhanceMode": 4,
+    "mvpDiscount": 10
+   },
+   "market": {
+    "mvpDiscount": 10,
+    "sf30Off": false,
+    "sfBoomReduction": false,
+    "sf51015": false,
+    "sf1plus1": false,
+    "starCatch": true,
+    "safeguard": "never",
+    "sfEnhanceMode": 4,
+    "replacementCost": {},
+    "mesoPerFlame": 3000000,
+    "cubeCostOverride": {}
+   },
+   "expectedMean": 1450591275.2403696,
+   "expectedBooms": 0.15565263252908454,
+   "relTolerance": 1e-9,
+   "source": {
+    "name": "starforce.tadeucci.dev optimizer.planMetrics (exact)",
+    "url": "https://starforce.tadeucci.dev/"
+   }
+  },
+  {
+   "level": 150,
+   "from": 17,
+   "to": 22,
+   "options": {
+    "safeguard": "never",
+    "enhanceMode": "off"
+   },
+   "market": {
+    "mvpDiscount": 0,
+    "sf30Off": false,
+    "sfBoomReduction": false,
+    "sf51015": false,
+    "sf1plus1": false,
+    "starCatch": true,
+    "safeguard": "never",
+    "sfEnhanceMode": "off",
+    "replacementCost": {},
+    "mesoPerFlame": 3000000,
+    "cubeCostOverride": {}
+   },
+   "expectedMean": 13203183844.411972,
+   "expectedBooms": 7.24602556343714,
+   "relTolerance": 1e-9,
+   "source": {
+    "name": "starforce.tadeucci.dev optimizer.planMetrics (exact)",
+    "url": "https://starforce.tadeucci.dev/"
+   }
+  },
+  {
+   "level": 150,
+   "from": 17,
+   "to": 22,
+   "options": {
+    "safeguard": "never",
+    "enhanceMode": 2
+   },
+   "market": {
+    "mvpDiscount": 0,
+    "sf30Off": false,
+    "sfBoomReduction": false,
+    "sf51015": false,
+    "sf1plus1": false,
+    "starCatch": true,
+    "safeguard": "never",
+    "sfEnhanceMode": 2,
+    "replacementCost": {},
+    "mesoPerFlame": 3000000,
+    "cubeCostOverride": {}
+   },
+   "expectedMean": 22877245963.641197,
+   "expectedBooms": 4.84006734251893,
+   "relTolerance": 1e-9,
+   "source": {
+    "name": "starforce.tadeucci.dev optimizer.planMetrics (exact)",
+    "url": "https://starforce.tadeucci.dev/"
+   }
+  },
+  {
+   "level": 150,
+   "from": 17,
+   "to": 22,
+   "options": {
+    "safeguard": "never",
+    "enhanceMode": 4,
+    "mvpDiscount": 10
+   },
+   "market": {
+    "mvpDiscount": 10,
+    "sf30Off": false,
+    "sfBoomReduction": false,
+    "sf51015": false,
+    "sf1plus1": false,
+    "starCatch": true,
+    "safeguard": "never",
+    "sfEnhanceMode": 4,
+    "replacementCost": {},
+    "mesoPerFlame": 3000000,
+    "cubeCostOverride": {}
+   },
+   "expectedMean": 41831620291.17311,
+   "expectedBooms": 0.11168767914032163,
+   "relTolerance": 1e-9,
+   "source": {
+    "name": "starforce.tadeucci.dev optimizer.planMetrics (exact)",
+    "url": "https://starforce.tadeucci.dev/"
+   }
+  },
+  {
+   "level": 150,
+   "from": 0,
+   "to": 22,
+   "options": {
+    "safeguard": "never",
+    "enhanceMode": "off"
+   },
+   "market": {
+    "mvpDiscount": 0,
+    "sf30Off": false,
+    "sfBoomReduction": false,
+    "sf51015": false,
+    "sf1plus1": false,
+    "starCatch": true,
+    "safeguard": "never",
+    "sfEnhanceMode": "off",
+    "replacementCost": {},
+    "mesoPerFlame": 3000000,
+    "cubeCostOverride": {}
+   },
+   "expectedMean": 13887386957.972271,
+   "expectedBooms": 7.380757762983626,
+   "relTolerance": 1e-9,
+   "source": {
+    "name": "starforce.tadeucci.dev optimizer.planMetrics (exact)",
+    "url": "https://starforce.tadeucci.dev/"
+   }
+  },
+  {
+   "level": 150,
+   "from": 0,
+   "to": 22,
+   "options": {
+    "safeguard": "never",
+    "enhanceMode": 2
+   },
+   "market": {
+    "mvpDiscount": 0,
+    "sf30Off": false,
+    "sfBoomReduction": false,
+    "sf51015": false,
+    "sf1plus1": false,
+    "starCatch": true,
+    "safeguard": "never",
+    "sfEnhanceMode": 2,
+    "replacementCost": {},
+    "mesoPerFlame": 3000000,
+    "cubeCostOverride": {}
+   },
+   "expectedMean": 23648385150.880302,
+   "expectedBooms": 4.928943029089854,
+   "relTolerance": 1e-9,
+   "source": {
+    "name": "starforce.tadeucci.dev optimizer.planMetrics (exact)",
+    "url": "https://starforce.tadeucci.dev/"
+   }
+  },
+  {
+   "level": 150,
+   "from": 0,
+   "to": 22,
+   "options": {
+    "safeguard": "never",
+    "enhanceMode": 4,
+    "mvpDiscount": 10
+   },
+   "market": {
+    "mvpDiscount": 10,
+    "sf30Off": false,
+    "sfBoomReduction": false,
+    "sf51015": false,
+    "sf1plus1": false,
+    "starCatch": true,
+    "safeguard": "never",
+    "sfEnhanceMode": 4,
+    "replacementCost": {},
+    "mesoPerFlame": 3000000,
+    "cubeCostOverride": {}
+   },
+   "expectedMean": 42696877525.77612,
+   "expectedBooms": 0.15565263252908454,
+   "relTolerance": 1e-9,
+   "source": {
+    "name": "starforce.tadeucci.dev optimizer.planMetrics (exact)",
+    "url": "https://starforce.tadeucci.dev/"
+   }
+  },
+  {
+   "level": 150,
+   "from": 22,
+   "to": 24,
+   "options": {
+    "safeguard": "never",
+    "enhanceMode": "off"
+   },
+   "market": {
+    "mvpDiscount": 0,
+    "sf30Off": false,
+    "sfBoomReduction": false,
+    "sf51015": false,
+    "sf1plus1": false,
+    "starCatch": true,
+    "safeguard": "never",
+    "sfEnhanceMode": "off",
+    "replacementCost": {},
+    "mesoPerFlame": 3000000,
+    "cubeCostOverride": {}
+   },
+   "expectedMean": 59486965631.795334,
+   "expectedBooms": 35.908856445785965,
+   "relTolerance": 1e-9,
+   "source": {
+    "name": "starforce.tadeucci.dev optimizer.planMetrics (exact)",
+    "url": "https://starforce.tadeucci.dev/"
+   }
+  },
+  {
+   "level": 150,
+   "from": 22,
+   "to": 24,
+   "options": {
+    "safeguard": "never",
+    "enhanceMode": 2
+   },
+   "market": {
+    "mvpDiscount": 0,
+    "sf30Off": false,
+    "sfBoomReduction": false,
+    "sf51015": false,
+    "sf1plus1": false,
+    "starCatch": true,
+    "safeguard": "never",
+    "sfEnhanceMode": 2,
+    "replacementCost": {},
+    "mesoPerFlame": 3000000,
+    "cubeCostOverride": {}
+   },
+   "expectedMean": 101654826882.25421,
+   "expectedBooms": 25.54265391564072,
+   "relTolerance": 1e-9,
+   "source": {
+    "name": "starforce.tadeucci.dev optimizer.planMetrics (exact)",
+    "url": "https://starforce.tadeucci.dev/"
+   }
+  },
+  {
+   "level": 150,
+   "from": 22,
+   "to": 24,
+   "options": {
+    "safeguard": "never",
+    "enhanceMode": 4,
+    "mvpDiscount": 10
+   },
+   "market": {
+    "mvpDiscount": 10,
+    "sf30Off": false,
+    "sfBoomReduction": false,
+    "sf51015": false,
+    "sf1plus1": false,
+    "starCatch": true,
+    "safeguard": "never",
+    "sfEnhanceMode": 4,
+    "replacementCost": {},
+    "mesoPerFlame": 3000000,
+    "cubeCostOverride": {}
+   },
+   "expectedMean": 174915705387.45563,
+   "expectedBooms": 4.921614645356369,
+   "relTolerance": 1e-9,
+   "source": {
+    "name": "starforce.tadeucci.dev optimizer.planMetrics (exact)",
+    "url": "https://starforce.tadeucci.dev/"
+   }
+  },
+  {
+   "level": 150,
+   "from": 21,
+   "to": 25,
+   "options": {
+    "safeguard": "never",
+    "enhanceMode": "off"
+   },
+   "market": {
+    "mvpDiscount": 0,
+    "sf30Off": false,
+    "sfBoomReduction": false,
+    "sf51015": false,
+    "sf1plus1": false,
+    "starCatch": true,
+    "safeguard": "never",
+    "sfEnhanceMode": "off",
+    "replacementCost": {},
+    "mesoPerFlame": 3000000,
+    "cubeCostOverride": {}
+   },
+   "expectedMean": 187181198055.55188,
+   "expectedBooms": 112.84347226644616,
+   "relTolerance": 1e-9,
+   "source": {
+    "name": "starforce.tadeucci.dev optimizer.planMetrics (exact)",
+    "url": "https://starforce.tadeucci.dev/"
+   }
+  },
+  {
+   "level": 150,
+   "from": 21,
+   "to": 25,
+   "options": {
+    "safeguard": "never",
+    "enhanceMode": 2
+   },
+   "market": {
+    "mvpDiscount": 0,
+    "sf30Off": false,
+    "sfBoomReduction": false,
+    "sf51015": false,
+    "sf1plus1": false,
+    "starCatch": true,
+    "safeguard": "never",
+    "sfEnhanceMode": 2,
+    "replacementCost": {},
+    "mesoPerFlame": 3000000,
+    "cubeCostOverride": {}
+   },
+   "expectedMean": 319566705601.6511,
+   "expectedBooms": 80.1221025219673,
+   "relTolerance": 1e-9,
+   "source": {
+    "name": "starforce.tadeucci.dev optimizer.planMetrics (exact)",
+    "url": "https://starforce.tadeucci.dev/"
+   }
+  },
+  {
+   "level": 150,
+   "from": 21,
+   "to": 25,
+   "options": {
+    "safeguard": "never",
+    "enhanceMode": 4,
+    "mvpDiscount": 10
+   },
+   "market": {
+    "mvpDiscount": 10,
+    "sf30Off": false,
+    "sfBoomReduction": false,
+    "sf51015": false,
+    "sf1plus1": false,
+    "starCatch": true,
+    "safeguard": "never",
+    "sfEnhanceMode": 4,
+    "replacementCost": {},
+    "mesoPerFlame": 3000000,
+    "cubeCostOverride": {}
+   },
+   "expectedMean": 534498845368.837,
+   "expectedBooms": 15.016557707440084,
+   "relTolerance": 1e-9,
+   "source": {
+    "name": "starforce.tadeucci.dev optimizer.planMetrics (exact)",
+    "url": "https://starforce.tadeucci.dev/"
+   }
+  },
+  {
+   "level": 160,
+   "from": 0,
+   "to": 15,
+   "options": {
+    "safeguard": "never",
+    "enhanceMode": "off"
+   },
+   "market": {
+    "mvpDiscount": 0,
+    "sf30Off": false,
+    "sfBoomReduction": false,
+    "sf51015": false,
+    "sf1plus1": false,
+    "starCatch": true,
+    "safeguard": "never",
+    "sfEnhanceMode": "off",
+    "replacementCost": {},
+    "mesoPerFlame": 3000000,
+    "cubeCostOverride": {}
+   },
+   "expectedMean": 509471849.2062428,
+   "expectedBooms": 0,
+   "relTolerance": 1e-9,
+   "source": {
+    "name": "starforce.tadeucci.dev optimizer.planMetrics (exact)",
+    "url": "https://starforce.tadeucci.dev/"
+   }
+  },
+  {
+   "level": 160,
+   "from": 0,
+   "to": 15,
+   "options": {
+    "safeguard": "never",
+    "enhanceMode": 2
+   },
+   "market": {
+    "mvpDiscount": 0,
+    "sf30Off": false,
+    "sfBoomReduction": false,
+    "sf51015": false,
+    "sf1plus1": false,
+    "starCatch": true,
+    "safeguard": "never",
+    "sfEnhanceMode": 2,
+    "replacementCost": {},
+    "mesoPerFlame": 3000000,
+    "cubeCostOverride": {}
+   },
+   "expectedMean": 509471849.2062428,
+   "expectedBooms": 0,
+   "relTolerance": 1e-9,
+   "source": {
+    "name": "starforce.tadeucci.dev optimizer.planMetrics (exact)",
+    "url": "https://starforce.tadeucci.dev/"
+   }
+  },
+  {
+   "level": 160,
+   "from": 0,
+   "to": 15,
+   "options": {
+    "safeguard": "never",
+    "enhanceMode": 4,
+    "mvpDiscount": 10
+   },
+   "market": {
+    "mvpDiscount": 10,
+    "sf30Off": false,
+    "sfBoomReduction": false,
+    "sf51015": false,
+    "sf1plus1": false,
+    "starCatch": true,
+    "safeguard": "never",
+    "sfEnhanceMode": 4,
+    "replacementCost": {},
+    "mesoPerFlame": 3000000,
+    "cubeCostOverride": {}
+   },
+   "expectedMean": 458524664.28561854,
+   "expectedBooms": 0,
+   "relTolerance": 1e-9,
+   "source": {
+    "name": "starforce.tadeucci.dev optimizer.planMetrics (exact)",
+    "url": "https://starforce.tadeucci.dev/"
+   }
+  },
+  {
+   "level": 160,
+   "from": 12,
+   "to": 17,
+   "options": {
+    "safeguard": "never",
+    "enhanceMode": "off"
+   },
+   "market": {
+    "mvpDiscount": 0,
+    "sf30Off": false,
+    "sfBoomReduction": false,
+    "sf51015": false,
+    "sf1plus1": false,
+    "starCatch": true,
+    "safeguard": "never",
+    "sfEnhanceMode": "off",
+    "replacementCost": {},
+    "mesoPerFlame": 3000000,
+    "cubeCostOverride": {}
+   },
+   "expectedMean": 772714117.445239,
+   "expectedBooms": 0.13473219954648524,
+   "relTolerance": 1e-9,
+   "source": {
+    "name": "starforce.tadeucci.dev optimizer.planMetrics (exact)",
+    "url": "https://starforce.tadeucci.dev/"
+   }
+  },
+  {
+   "level": 160,
+   "from": 12,
+   "to": 17,
+   "options": {
+    "safeguard": "never",
+    "enhanceMode": 2
+   },
+   "market": {
+    "mvpDiscount": 0,
+    "sf30Off": false,
+    "sfBoomReduction": false,
+    "sf51015": false,
+    "sf1plus1": false,
+    "starCatch": true,
+    "safeguard": "never",
+    "sfEnhanceMode": 2,
+    "replacementCost": {},
+    "mesoPerFlame": 3000000,
+    "cubeCostOverride": {}
+   },
+   "expectedMean": 878221743.1239899,
+   "expectedBooms": 0.08887568657092466,
+   "relTolerance": 1e-9,
+   "source": {
+    "name": "starforce.tadeucci.dev optimizer.planMetrics (exact)",
+    "url": "https://starforce.tadeucci.dev/"
+   }
+  },
+  {
+   "level": 160,
+   "from": 12,
+   "to": 17,
+   "options": {
+    "safeguard": "never",
+    "enhanceMode": 4,
+    "mvpDiscount": 10
+   },
+   "market": {
+    "mvpDiscount": 10,
+    "sf30Off": false,
+    "sfBoomReduction": false,
+    "sf51015": false,
+    "sf1plus1": false,
+    "starCatch": true,
+    "safeguard": "never",
+    "sfEnhanceMode": 4,
+    "replacementCost": {},
+    "mesoPerFlame": 3000000,
+    "cubeCostOverride": {}
+   },
+   "expectedMean": 998210674.0542097,
+   "expectedBooms": 0.04396495338876291,
+   "relTolerance": 1e-9,
+   "source": {
+    "name": "starforce.tadeucci.dev optimizer.planMetrics (exact)",
+    "url": "https://starforce.tadeucci.dev/"
+   }
+  },
+  {
+   "level": 160,
+   "from": 15,
+   "to": 18,
+   "options": {
+    "safeguard": "never",
+    "enhanceMode": "off"
+   },
+   "market": {
+    "mvpDiscount": 0,
+    "sf30Off": false,
+    "sfBoomReduction": false,
+    "sf51015": false,
+    "sf1plus1": false,
+    "starCatch": true,
+    "safeguard": "never",
+    "sfEnhanceMode": "off",
+    "replacementCost": {},
+    "mesoPerFlame": 3000000,
+    "cubeCostOverride": {}
+   },
+   "expectedMean": 1076408478.5433466,
+   "expectedBooms": 0.6203255344635208,
+   "relTolerance": 1e-9,
+   "source": {
+    "name": "starforce.tadeucci.dev optimizer.planMetrics (exact)",
+    "url": "https://starforce.tadeucci.dev/"
+   }
+  },
+  {
+   "level": 160,
+   "from": 15,
+   "to": 18,
+   "options": {
+    "safeguard": "never",
+    "enhanceMode": 2
+   },
+   "market": {
+    "mvpDiscount": 0,
+    "sf30Off": false,
+    "sfBoomReduction": false,
+    "sf51015": false,
+    "sf1plus1": false,
+    "starCatch": true,
+    "safeguard": "never",
+    "sfEnhanceMode": 2,
+    "replacementCost": {},
+    "mesoPerFlame": 3000000,
+    "cubeCostOverride": {}
+   },
+   "expectedMean": 1298555529.0683768,
+   "expectedBooms": 0.38010672337600526,
+   "relTolerance": 1e-9,
+   "source": {
+    "name": "starforce.tadeucci.dev optimizer.planMetrics (exact)",
+    "url": "https://starforce.tadeucci.dev/"
+   }
+  },
+  {
+   "level": 160,
+   "from": 15,
+   "to": 18,
+   "options": {
+    "safeguard": "never",
+    "enhanceMode": 4,
+    "mvpDiscount": 10
+   },
+   "market": {
+    "mvpDiscount": 10,
+    "sf30Off": false,
+    "sfBoomReduction": false,
+    "sf51015": false,
+    "sf1plus1": false,
+    "starCatch": true,
+    "safeguard": "never",
+    "sfEnhanceMode": 4,
+    "replacementCost": {},
+    "mesoPerFlame": 3000000,
+    "cubeCostOverride": {}
+   },
+   "expectedMean": 1760475100.5890791,
+   "expectedBooms": 0.15565263252908454,
+   "relTolerance": 1e-9,
+   "source": {
+    "name": "starforce.tadeucci.dev optimizer.planMetrics (exact)",
+    "url": "https://starforce.tadeucci.dev/"
+   }
+  },
+  {
+   "level": 160,
+   "from": 17,
+   "to": 22,
+   "options": {
+    "safeguard": "never",
+    "enhanceMode": "off"
+   },
+   "market": {
+    "mvpDiscount": 0,
+    "sf30Off": false,
+    "sfBoomReduction": false,
+    "sf51015": false,
+    "sf1plus1": false,
+    "starCatch": true,
+    "safeguard": "never",
+    "sfEnhanceMode": "off",
+    "replacementCost": {},
+    "mesoPerFlame": 3000000,
+    "cubeCostOverride": {}
+   },
+   "expectedMean": 16023744772.22244,
+   "expectedBooms": 7.24602556343714,
+   "relTolerance": 1e-9,
+   "source": {
+    "name": "starforce.tadeucci.dev optimizer.planMetrics (exact)",
+    "url": "https://starforce.tadeucci.dev/"
+   }
+  },
+  {
+   "level": 160,
+   "from": 17,
+   "to": 22,
+   "options": {
+    "safeguard": "never",
+    "enhanceMode": 2
+   },
+   "market": {
+    "mvpDiscount": 0,
+    "sf30Off": false,
+    "sfBoomReduction": false,
+    "sf51015": false,
+    "sf1plus1": false,
+    "starCatch": true,
+    "safeguard": "never",
+    "sfEnhanceMode": 2,
+    "replacementCost": {},
+    "mesoPerFlame": 3000000,
+    "cubeCostOverride": {}
+   },
+   "expectedMean": 27764463428.23643,
+   "expectedBooms": 4.84006734251893,
+   "relTolerance": 1e-9,
+   "source": {
+    "name": "starforce.tadeucci.dev optimizer.planMetrics (exact)",
+    "url": "https://starforce.tadeucci.dev/"
+   }
+  },
+  {
+   "level": 160,
+   "from": 17,
+   "to": 22,
+   "options": {
+    "safeguard": "never",
+    "enhanceMode": 4,
+    "mvpDiscount": 10
+   },
+   "market": {
+    "mvpDiscount": 10,
+    "sf30Off": false,
+    "sfBoomReduction": false,
+    "sf51015": false,
+    "sf1plus1": false,
+    "starCatch": true,
+    "safeguard": "never",
+    "sfEnhanceMode": 4,
+    "replacementCost": {},
+    "mesoPerFlame": 3000000,
+    "cubeCostOverride": {}
+   },
+   "expectedMean": 50768040118.144844,
+   "expectedBooms": 0.11168767914032163,
+   "relTolerance": 1e-9,
+   "source": {
+    "name": "starforce.tadeucci.dev optimizer.planMetrics (exact)",
+    "url": "https://starforce.tadeucci.dev/"
+   }
+  },
+  {
+   "level": 160,
+   "from": 0,
+   "to": 22,
+   "options": {
+    "safeguard": "never",
+    "enhanceMode": "off"
+   },
+   "market": {
+    "mvpDiscount": 0,
+    "sf30Off": false,
+    "sfBoomReduction": false,
+    "sf51015": false,
+    "sf1plus1": false,
+    "starCatch": true,
+    "safeguard": "never",
+    "sfEnhanceMode": "off",
+    "replacementCost": {},
+    "mesoPerFlame": 3000000,
+    "cubeCostOverride": {}
+   },
+   "expectedMean": 16854107439.554195,
+   "expectedBooms": 7.380757762983626,
+   "relTolerance": 1e-9,
+   "source": {
+    "name": "starforce.tadeucci.dev optimizer.planMetrics (exact)",
+    "url": "https://starforce.tadeucci.dev/"
+   }
+  },
+  {
+   "level": 160,
+   "from": 0,
+   "to": 22,
+   "options": {
+    "safeguard": "never",
+    "enhanceMode": 2
+   },
+   "market": {
+    "mvpDiscount": 0,
+    "sf30Off": false,
+    "sfBoomReduction": false,
+    "sf51015": false,
+    "sf1plus1": false,
+    "starCatch": true,
+    "safeguard": "never",
+    "sfEnhanceMode": 2,
+    "replacementCost": {},
+    "mesoPerFlame": 3000000,
+    "cubeCostOverride": {}
+   },
+   "expectedMean": 28700333721.246937,
+   "expectedBooms": 4.928943029089854,
+   "relTolerance": 1e-9,
+   "source": {
+    "name": "starforce.tadeucci.dev optimizer.planMetrics (exact)",
+    "url": "https://starforce.tadeucci.dev/"
+   }
+  },
+  {
+   "level": 160,
+   "from": 0,
+   "to": 22,
+   "options": {
+    "safeguard": "never",
+    "enhanceMode": 4,
+    "mvpDiscount": 10
+   },
+   "market": {
+    "mvpDiscount": 10,
+    "sf30Off": false,
+    "sfBoomReduction": false,
+    "sf51015": false,
+    "sf1plus1": false,
+    "starCatch": true,
+    "safeguard": "never",
+    "sfEnhanceMode": 4,
+    "replacementCost": {},
+    "mesoPerFlame": 3000000,
+    "cubeCostOverride": {}
+   },
+   "expectedMean": 51818134487.09692,
+   "expectedBooms": 0.15565263252908454,
+   "relTolerance": 1e-9,
+   "source": {
+    "name": "starforce.tadeucci.dev optimizer.planMetrics (exact)",
+    "url": "https://starforce.tadeucci.dev/"
+   }
+  },
+  {
+   "level": 160,
+   "from": 22,
+   "to": 24,
+   "options": {
+    "safeguard": "never",
+    "enhanceMode": "off"
+   },
+   "market": {
+    "mvpDiscount": 0,
+    "sf30Off": false,
+    "sfBoomReduction": false,
+    "sf51015": false,
+    "sf1plus1": false,
+    "starCatch": true,
+    "safeguard": "never",
+    "sfEnhanceMode": "off",
+    "replacementCost": {},
+    "mesoPerFlame": 3000000,
+    "cubeCostOverride": {}
+   },
+   "expectedMean": 72195007750.40227,
+   "expectedBooms": 35.908856445785965,
+   "relTolerance": 1e-9,
+   "source": {
+    "name": "starforce.tadeucci.dev optimizer.planMetrics (exact)",
+    "url": "https://starforce.tadeucci.dev/"
+   }
+  },
+  {
+   "level": 160,
+   "from": 22,
+   "to": 24,
+   "options": {
+    "safeguard": "never",
+    "enhanceMode": 2
+   },
+   "market": {
+    "mvpDiscount": 0,
+    "sf30Off": false,
+    "sfBoomReduction": false,
+    "sf51015": false,
+    "sf1plus1": false,
+    "starCatch": true,
+    "safeguard": "never",
+    "sfEnhanceMode": 2,
+    "replacementCost": {},
+    "mesoPerFlame": 3000000,
+    "cubeCostOverride": {}
+   },
+   "expectedMean": 123371131729.85323,
+   "expectedBooms": 25.54265391564072,
+   "relTolerance": 1e-9,
+   "source": {
+    "name": "starforce.tadeucci.dev optimizer.planMetrics (exact)",
+    "url": "https://starforce.tadeucci.dev/"
+   }
+  },
+  {
+   "level": 160,
+   "from": 22,
+   "to": 24,
+   "options": {
+    "safeguard": "never",
+    "enhanceMode": 4,
+    "mvpDiscount": 10
+   },
+   "market": {
+    "mvpDiscount": 10,
+    "sf30Off": false,
+    "sfBoomReduction": false,
+    "sf51015": false,
+    "sf1plus1": false,
+    "starCatch": true,
+    "safeguard": "never",
+    "sfEnhanceMode": 4,
+    "replacementCost": {},
+    "mesoPerFlame": 3000000,
+    "cubeCostOverride": {}
+   },
+   "expectedMean": 212282660472.10602,
+   "expectedBooms": 4.921614645356369,
+   "relTolerance": 1e-9,
+   "source": {
+    "name": "starforce.tadeucci.dev optimizer.planMetrics (exact)",
+    "url": "https://starforce.tadeucci.dev/"
+   }
+  },
+  {
+   "level": 160,
+   "from": 21,
+   "to": 25,
+   "options": {
+    "safeguard": "never",
+    "enhanceMode": "off"
+   },
+   "market": {
+    "mvpDiscount": 0,
+    "sf30Off": false,
+    "sfBoomReduction": false,
+    "sf51015": false,
+    "sf1plus1": false,
+    "starCatch": true,
+    "safeguard": "never",
+    "sfEnhanceMode": "off",
+    "replacementCost": {},
+    "mesoPerFlame": 3000000,
+    "cubeCostOverride": {}
+   },
+   "expectedMean": 227168221515.20694,
+   "expectedBooms": 112.84347226644616,
+   "relTolerance": 1e-9,
+   "source": {
+    "name": "starforce.tadeucci.dev optimizer.planMetrics (exact)",
+    "url": "https://starforce.tadeucci.dev/"
+   }
+  },
+  {
+   "level": 160,
+   "from": 21,
+   "to": 25,
+   "options": {
+    "safeguard": "never",
+    "enhanceMode": 2
+   },
+   "market": {
+    "mvpDiscount": 0,
+    "sf30Off": false,
+    "sfBoomReduction": false,
+    "sf51015": false,
+    "sf1plus1": false,
+    "starCatch": true,
+    "safeguard": "never",
+    "sfEnhanceMode": 2,
+    "replacementCost": {},
+    "mesoPerFlame": 3000000,
+    "cubeCostOverride": {}
+   },
+   "expectedMean": 387835065267.1902,
+   "expectedBooms": 80.1221025219673,
+   "relTolerance": 1e-9,
+   "source": {
+    "name": "starforce.tadeucci.dev optimizer.planMetrics (exact)",
+    "url": "https://starforce.tadeucci.dev/"
+   }
+  },
+  {
+   "level": 160,
+   "from": 21,
+   "to": 25,
+   "options": {
+    "safeguard": "never",
+    "enhanceMode": 4,
+    "mvpDiscount": 10
+   },
+   "market": {
+    "mvpDiscount": 10,
+    "sf30Off": false,
+    "sfBoomReduction": false,
+    "sf51015": false,
+    "sf1plus1": false,
+    "starCatch": true,
+    "safeguard": "never",
+    "sfEnhanceMode": 4,
+    "replacementCost": {},
+    "mesoPerFlame": 3000000,
+    "cubeCostOverride": {}
+   },
+   "expectedMean": 648682958764.8407,
+   "expectedBooms": 15.016557707440084,
+   "relTolerance": 1e-9,
+   "source": {
+    "name": "starforce.tadeucci.dev optimizer.planMetrics (exact)",
+    "url": "https://starforce.tadeucci.dev/"
+   }
+  },
+  {
+   "level": 200,
+   "from": 0,
+   "to": 15,
+   "options": {
+    "safeguard": "never",
+    "enhanceMode": "off"
+   },
+   "market": {
+    "mvpDiscount": 0,
+    "sf30Off": false,
+    "sfBoomReduction": false,
+    "sf51015": false,
+    "sf1plus1": false,
+    "starCatch": true,
+    "safeguard": "never",
+    "sfEnhanceMode": "off",
+    "replacementCost": {},
+    "mesoPerFlame": 3000000,
+    "cubeCostOverride": {}
+   },
+   "expectedMean": 995038089.6920172,
+   "expectedBooms": 0,
+   "relTolerance": 1e-9,
+   "source": {
+    "name": "starforce.tadeucci.dev optimizer.planMetrics (exact)",
+    "url": "https://starforce.tadeucci.dev/"
+   }
+  },
+  {
+   "level": 200,
+   "from": 0,
+   "to": 15,
+   "options": {
+    "safeguard": "never",
+    "enhanceMode": 2
+   },
+   "market": {
+    "mvpDiscount": 0,
+    "sf30Off": false,
+    "sfBoomReduction": false,
+    "sf51015": false,
+    "sf1plus1": false,
+    "starCatch": true,
+    "safeguard": "never",
+    "sfEnhanceMode": 2,
+    "replacementCost": {},
+    "mesoPerFlame": 3000000,
+    "cubeCostOverride": {}
+   },
+   "expectedMean": 995038089.6920172,
+   "expectedBooms": 0,
+   "relTolerance": 1e-9,
+   "source": {
+    "name": "starforce.tadeucci.dev optimizer.planMetrics (exact)",
+    "url": "https://starforce.tadeucci.dev/"
+   }
+  },
+  {
+   "level": 200,
+   "from": 0,
+   "to": 15,
+   "options": {
+    "safeguard": "never",
+    "enhanceMode": 4,
+    "mvpDiscount": 10
+   },
+   "market": {
+    "mvpDiscount": 10,
+    "sf30Off": false,
+    "sfBoomReduction": false,
+    "sf51015": false,
+    "sf1plus1": false,
+    "starCatch": true,
+    "safeguard": "never",
+    "sfEnhanceMode": 4,
+    "replacementCost": {},
+    "mesoPerFlame": 3000000,
+    "cubeCostOverride": {}
+   },
+   "expectedMean": 895534280.7228155,
+   "expectedBooms": 0,
+   "relTolerance": 1e-9,
+   "source": {
+    "name": "starforce.tadeucci.dev optimizer.planMetrics (exact)",
+    "url": "https://starforce.tadeucci.dev/"
+   }
+  },
+  {
+   "level": 200,
+   "from": 12,
+   "to": 17,
+   "options": {
+    "safeguard": "never",
+    "enhanceMode": "off"
+   },
+   "market": {
+    "mvpDiscount": 0,
+    "sf30Off": false,
+    "sfBoomReduction": false,
+    "sf51015": false,
+    "sf1plus1": false,
+    "starCatch": true,
+    "safeguard": "never",
+    "sfEnhanceMode": "off",
+    "replacementCost": {},
+    "mesoPerFlame": 3000000,
+    "cubeCostOverride": {}
+   },
+   "expectedMean": 1509192164.577324,
+   "expectedBooms": 0.13473219954648524,
+   "relTolerance": 1e-9,
+   "source": {
+    "name": "starforce.tadeucci.dev optimizer.planMetrics (exact)",
+    "url": "https://starforce.tadeucci.dev/"
+   }
+  },
+  {
+   "level": 200,
+   "from": 12,
+   "to": 17,
+   "options": {
+    "safeguard": "never",
+    "enhanceMode": 2
+   },
+   "market": {
+    "mvpDiscount": 0,
+    "sf30Off": false,
+    "sfBoomReduction": false,
+    "sf51015": false,
+    "sf1plus1": false,
+    "starCatch": true,
+    "safeguard": "never",
+    "sfEnhanceMode": 2,
+    "replacementCost": {},
+    "mesoPerFlame": 3000000,
+    "cubeCostOverride": {}
+   },
+   "expectedMean": 1715259142.636413,
+   "expectedBooms": 0.08887568657092466,
+   "relTolerance": 1e-9,
+   "source": {
+    "name": "starforce.tadeucci.dev optimizer.planMetrics (exact)",
+    "url": "https://starforce.tadeucci.dev/"
+   }
+  },
+  {
+   "level": 200,
+   "from": 12,
+   "to": 17,
+   "options": {
+    "safeguard": "never",
+    "enhanceMode": 4,
+    "mvpDiscount": 10
+   },
+   "market": {
+    "mvpDiscount": 10,
+    "sf30Off": false,
+    "sfBoomReduction": false,
+    "sf51015": false,
+    "sf1plus1": false,
+    "starCatch": true,
+    "safeguard": "never",
+    "sfEnhanceMode": 4,
+    "replacementCost": {},
+    "mesoPerFlame": 3000000,
+    "cubeCostOverride": {}
+   },
+   "expectedMean": 1949609301.3351753,
+   "expectedBooms": 0.04396495338876291,
+   "relTolerance": 1e-9,
+   "source": {
+    "name": "starforce.tadeucci.dev optimizer.planMetrics (exact)",
+    "url": "https://starforce.tadeucci.dev/"
+   }
+  },
+  {
+   "level": 200,
+   "from": 15,
+   "to": 18,
+   "options": {
+    "safeguard": "never",
+    "enhanceMode": "off"
+   },
+   "market": {
+    "mvpDiscount": 0,
+    "sf30Off": false,
+    "sfBoomReduction": false,
+    "sf51015": false,
+    "sf1plus1": false,
+    "starCatch": true,
+    "safeguard": "never",
+    "sfEnhanceMode": "off",
+    "replacementCost": {},
+    "mesoPerFlame": 3000000,
+    "cubeCostOverride": {}
+   },
+   "expectedMean": 2102340011.060391,
+   "expectedBooms": 0.6203255344635208,
+   "relTolerance": 1e-9,
+   "source": {
+    "name": "starforce.tadeucci.dev optimizer.planMetrics (exact)",
+    "url": "https://starforce.tadeucci.dev/"
+   }
+  },
+  {
+   "level": 200,
+   "from": 15,
+   "to": 18,
+   "options": {
+    "safeguard": "never",
+    "enhanceMode": 2
+   },
+   "market": {
+    "mvpDiscount": 0,
+    "sf30Off": false,
+    "sfBoomReduction": false,
+    "sf51015": false,
+    "sf1plus1": false,
+    "starCatch": true,
+    "safeguard": "never",
+    "sfEnhanceMode": 2,
+    "replacementCost": {},
+    "mesoPerFlame": 3000000,
+    "cubeCostOverride": {}
+   },
+   "expectedMean": 2536216763.665812,
+   "expectedBooms": 0.38010672337600526,
+   "relTolerance": 1e-9,
+   "source": {
+    "name": "starforce.tadeucci.dev optimizer.planMetrics (exact)",
+    "url": "https://starforce.tadeucci.dev/"
+   }
+  },
+  {
+   "level": 200,
+   "from": 15,
+   "to": 18,
+   "options": {
+    "safeguard": "never",
+    "enhanceMode": 4,
+    "mvpDiscount": 10
+   },
+   "market": {
+    "mvpDiscount": 10,
+    "sf30Off": false,
+    "sfBoomReduction": false,
+    "sf51015": false,
+    "sf1plus1": false,
+    "starCatch": true,
+    "safeguard": "never",
+    "sfEnhanceMode": 4,
+    "replacementCost": {},
+    "mesoPerFlame": 3000000,
+    "cubeCostOverride": {}
+   },
+   "expectedMean": 3438395252.2127123,
+   "expectedBooms": 0.15565263252908454,
+   "relTolerance": 1e-9,
+   "source": {
+    "name": "starforce.tadeucci.dev optimizer.planMetrics (exact)",
+    "url": "https://starforce.tadeucci.dev/"
+   }
+  },
+  {
+   "level": 200,
+   "from": 17,
+   "to": 22,
+   "options": {
+    "safeguard": "never",
+    "enhanceMode": "off"
+   },
+   "market": {
+    "mvpDiscount": 0,
+    "sf30Off": false,
+    "sfBoomReduction": false,
+    "sf51015": false,
+    "sf1plus1": false,
+    "starCatch": true,
+    "safeguard": "never",
+    "sfEnhanceMode": "off",
+    "replacementCost": {},
+    "mesoPerFlame": 3000000,
+    "cubeCostOverride": {}
+   },
+   "expectedMean": 31296211406.145817,
+   "expectedBooms": 7.24602556343714,
+   "relTolerance": 1e-9,
+   "source": {
+    "name": "starforce.tadeucci.dev optimizer.planMetrics (exact)",
+    "url": "https://starforce.tadeucci.dev/"
+   }
+  },
+  {
+   "level": 200,
+   "from": 17,
+   "to": 22,
+   "options": {
+    "safeguard": "never",
+    "enhanceMode": 2
+   },
+   "market": {
+    "mvpDiscount": 0,
+    "sf30Off": false,
+    "sfBoomReduction": false,
+    "sf51015": false,
+    "sf1plus1": false,
+    "starCatch": true,
+    "safeguard": "never",
+    "sfEnhanceMode": 2,
+    "replacementCost": {},
+    "mesoPerFlame": 3000000,
+    "cubeCostOverride": {}
+   },
+   "expectedMean": 54227249502.8167,
+   "expectedBooms": 4.84006734251893,
+   "relTolerance": 1e-9,
+   "source": {
+    "name": "starforce.tadeucci.dev optimizer.planMetrics (exact)",
+    "url": "https://starforce.tadeucci.dev/"
+   }
+  },
+  {
+   "level": 200,
+   "from": 17,
+   "to": 22,
+   "options": {
+    "safeguard": "never",
+    "enhanceMode": 4,
+    "mvpDiscount": 10
+   },
+   "market": {
+    "mvpDiscount": 10,
+    "sf30Off": false,
+    "sfBoomReduction": false,
+    "sf51015": false,
+    "sf1plus1": false,
+    "starCatch": true,
+    "safeguard": "never",
+    "sfEnhanceMode": 4,
+    "replacementCost": {},
+    "mesoPerFlame": 3000000,
+    "cubeCostOverride": {}
+   },
+   "expectedMean": 99156047130.01587,
+   "expectedBooms": 0.11168767914032163,
+   "relTolerance": 1e-9,
+   "source": {
+    "name": "starforce.tadeucci.dev optimizer.planMetrics (exact)",
+    "url": "https://starforce.tadeucci.dev/"
+   }
+  },
+  {
+   "level": 200,
+   "from": 0,
+   "to": 22,
+   "options": {
+    "safeguard": "never",
+    "enhanceMode": "off"
+   },
+   "market": {
+    "mvpDiscount": 0,
+    "sf30Off": false,
+    "sfBoomReduction": false,
+    "sf51015": false,
+    "sf1plus1": false,
+    "starCatch": true,
+    "safeguard": "never",
+    "sfEnhanceMode": "off",
+    "replacementCost": {},
+    "mesoPerFlame": 3000000,
+    "cubeCostOverride": {}
+   },
+   "expectedMean": 32917982193.294975,
+   "expectedBooms": 7.380757762983626,
+   "relTolerance": 1e-9,
+   "source": {
+    "name": "starforce.tadeucci.dev optimizer.planMetrics (exact)",
+    "url": "https://starforce.tadeucci.dev/"
+   }
+  },
+  {
+   "level": 200,
+   "from": 0,
+   "to": 22,
+   "options": {
+    "safeguard": "never",
+    "enhanceMode": 2
+   },
+   "market": {
+    "mvpDiscount": 0,
+    "sf30Off": false,
+    "sfBoomReduction": false,
+    "sf51015": false,
+    "sf1plus1": false,
+    "starCatch": true,
+    "safeguard": "never",
+    "sfEnhanceMode": 2,
+    "replacementCost": {},
+    "mesoPerFlame": 3000000,
+    "cubeCostOverride": {}
+   },
+   "expectedMean": 56055087268.024956,
+   "expectedBooms": 4.928943029089854,
+   "relTolerance": 1e-9,
+   "source": {
+    "name": "starforce.tadeucci.dev optimizer.planMetrics (exact)",
+    "url": "https://starforce.tadeucci.dev/"
+   }
+  },
+  {
+   "level": 200,
+   "from": 0,
+   "to": 22,
+   "options": {
+    "safeguard": "never",
+    "enhanceMode": 4,
+    "mvpDiscount": 10
+   },
+   "market": {
+    "mvpDiscount": 10,
+    "sf30Off": false,
+    "sfBoomReduction": false,
+    "sf51015": false,
+    "sf1plus1": false,
+    "starCatch": true,
+    "safeguard": "never",
+    "sfEnhanceMode": 4,
+    "replacementCost": {},
+    "mesoPerFlame": 3000000,
+    "cubeCostOverride": {}
+   },
+   "expectedMean": 101206977191.6657,
+   "expectedBooms": 0.15565263252908454,
+   "relTolerance": 1e-9,
+   "source": {
+    "name": "starforce.tadeucci.dev optimizer.planMetrics (exact)",
+    "url": "https://starforce.tadeucci.dev/"
+   }
+  },
+  {
+   "level": 200,
+   "from": 22,
+   "to": 24,
+   "options": {
+    "safeguard": "never",
+    "enhanceMode": "off"
+   },
+   "market": {
+    "mvpDiscount": 0,
+    "sf30Off": false,
+    "sfBoomReduction": false,
+    "sf51015": false,
+    "sf1plus1": false,
+    "starCatch": true,
+    "safeguard": "never",
+    "sfEnhanceMode": "off",
+    "replacementCost": {},
+    "mesoPerFlame": 3000000,
+    "cubeCostOverride": {}
+   },
+   "expectedMean": 141005144793.6055,
+   "expectedBooms": 35.908856445785965,
+   "relTolerance": 1e-9,
+   "source": {
+    "name": "starforce.tadeucci.dev optimizer.planMetrics (exact)",
+    "url": "https://starforce.tadeucci.dev/"
+   }
+  },
+  {
+   "level": 200,
+   "from": 22,
+   "to": 24,
+   "options": {
+    "safeguard": "never",
+    "enhanceMode": 2
+   },
+   "market": {
+    "mvpDiscount": 0,
+    "sf30Off": false,
+    "sfBoomReduction": false,
+    "sf51015": false,
+    "sf1plus1": false,
+    "starCatch": true,
+    "safeguard": "never",
+    "sfEnhanceMode": 2,
+    "replacementCost": {},
+    "mesoPerFlame": 3000000,
+    "cubeCostOverride": {}
+   },
+   "expectedMean": 240958285494.07086,
+   "expectedBooms": 25.54265391564072,
+   "relTolerance": 1e-9,
+   "source": {
+    "name": "starforce.tadeucci.dev optimizer.planMetrics (exact)",
+    "url": "https://starforce.tadeucci.dev/"
+   }
+  },
+  {
+   "level": 200,
+   "from": 22,
+   "to": 24,
+   "options": {
+    "safeguard": "never",
+    "enhanceMode": 4,
+    "mvpDiscount": 10
+   },
+   "market": {
+    "mvpDiscount": 10,
+    "sf30Off": false,
+    "sfBoomReduction": false,
+    "sf51015": false,
+    "sf1plus1": false,
+    "starCatch": true,
+    "safeguard": "never",
+    "sfEnhanceMode": 4,
+    "replacementCost": {},
+    "mesoPerFlame": 3000000,
+    "cubeCostOverride": {}
+   },
+   "expectedMean": 414613416729.23834,
+   "expectedBooms": 4.921614645356369,
+   "relTolerance": 1e-9,
+   "source": {
+    "name": "starforce.tadeucci.dev optimizer.planMetrics (exact)",
+    "url": "https://starforce.tadeucci.dev/"
+   }
+  },
+  {
+   "level": 200,
+   "from": 21,
+   "to": 25,
+   "options": {
+    "safeguard": "never",
+    "enhanceMode": "off"
+   },
+   "market": {
+    "mvpDiscount": 0,
+    "sf30Off": false,
+    "sfBoomReduction": false,
+    "sf51015": false,
+    "sf1plus1": false,
+    "starCatch": true,
+    "safeguard": "never",
+    "sfEnhanceMode": "off",
+    "replacementCost": {},
+    "mesoPerFlame": 3000000,
+    "cubeCostOverride": {}
+   },
+   "expectedMean": 443685643973.6317,
+   "expectedBooms": 112.84347226644616,
+   "relTolerance": 1e-9,
+   "source": {
+    "name": "starforce.tadeucci.dev optimizer.planMetrics (exact)",
+    "url": "https://starforce.tadeucci.dev/"
+   }
+  },
+  {
+   "level": 200,
+   "from": 21,
+   "to": 25,
+   "options": {
+    "safeguard": "never",
+    "enhanceMode": 2
+   },
+   "market": {
+    "mvpDiscount": 0,
+    "sf30Off": false,
+    "sfBoomReduction": false,
+    "sf51015": false,
+    "sf1plus1": false,
+    "starCatch": true,
+    "safeguard": "never",
+    "sfEnhanceMode": 2,
+    "replacementCost": {},
+    "mesoPerFlame": 3000000,
+    "cubeCostOverride": {}
+   },
+   "expectedMean": 757487366388.1708,
+   "expectedBooms": 80.1221025219673,
+   "relTolerance": 1e-9,
+   "source": {
+    "name": "starforce.tadeucci.dev optimizer.planMetrics (exact)",
+    "url": "https://starforce.tadeucci.dev/"
+   }
+  },
+  {
+   "level": 200,
+   "from": 21,
+   "to": 25,
+   "options": {
+    "safeguard": "never",
+    "enhanceMode": 4,
+    "mvpDiscount": 10
+   },
+   "market": {
+    "mvpDiscount": 10,
+    "sf30Off": false,
+    "sfBoomReduction": false,
+    "sf51015": false,
+    "sf1plus1": false,
+    "starCatch": true,
+    "safeguard": "never",
+    "sfEnhanceMode": 4,
+    "replacementCost": {},
+    "mesoPerFlame": 3000000,
+    "cubeCostOverride": {}
+   },
+   "expectedMean": 1266955381943.24,
+   "expectedBooms": 15.016557707440084,
+   "relTolerance": 1e-9,
+   "source": {
+    "name": "starforce.tadeucci.dev optimizer.planMetrics (exact)",
+    "url": "https://starforce.tadeucci.dev/"
+   }
+  },
+  {
+   "level": 250,
+   "from": 0,
+   "to": 15,
+   "options": {
+    "safeguard": "never",
+    "enhanceMode": "off"
+   },
+   "market": {
+    "mvpDiscount": 0,
+    "sf30Off": false,
+    "sfBoomReduction": false,
+    "sf51015": false,
+    "sf1plus1": false,
+    "starCatch": true,
+    "safeguard": "never",
+    "sfEnhanceMode": "off",
+    "replacementCost": {},
+    "mesoPerFlame": 3000000,
+    "cubeCostOverride": {}
+   },
+   "expectedMean": 1943410198.3286915,
+   "expectedBooms": 0,
+   "relTolerance": 1e-9,
+   "source": {
+    "name": "starforce.tadeucci.dev optimizer.planMetrics (exact)",
+    "url": "https://starforce.tadeucci.dev/"
+   }
+  },
+  {
+   "level": 250,
+   "from": 0,
+   "to": 15,
+   "options": {
+    "safeguard": "never",
+    "enhanceMode": 2
+   },
+   "market": {
+    "mvpDiscount": 0,
+    "sf30Off": false,
+    "sfBoomReduction": false,
+    "sf51015": false,
+    "sf1plus1": false,
+    "starCatch": true,
+    "safeguard": "never",
+    "sfEnhanceMode": 2,
+    "replacementCost": {},
+    "mesoPerFlame": 3000000,
+    "cubeCostOverride": {}
+   },
+   "expectedMean": 1943410198.3286915,
+   "expectedBooms": 0,
+   "relTolerance": 1e-9,
+   "source": {
+    "name": "starforce.tadeucci.dev optimizer.planMetrics (exact)",
+    "url": "https://starforce.tadeucci.dev/"
+   }
+  },
+  {
+   "level": 250,
+   "from": 0,
+   "to": 15,
+   "options": {
+    "safeguard": "never",
+    "enhanceMode": 4,
+    "mvpDiscount": 10
+   },
+   "market": {
+    "mvpDiscount": 10,
+    "sf30Off": false,
+    "sfBoomReduction": false,
+    "sf51015": false,
+    "sf1plus1": false,
+    "starCatch": true,
+    "safeguard": "never",
+    "sfEnhanceMode": 4,
+    "replacementCost": {},
+    "mesoPerFlame": 3000000,
+    "cubeCostOverride": {}
+   },
+   "expectedMean": 1749069178.4958224,
+   "expectedBooms": 0,
+   "relTolerance": 1e-9,
+   "source": {
+    "name": "starforce.tadeucci.dev optimizer.planMetrics (exact)",
+    "url": "https://starforce.tadeucci.dev/"
+   }
+  },
+  {
+   "level": 250,
+   "from": 12,
+   "to": 17,
+   "options": {
+    "safeguard": "never",
+    "enhanceMode": "off"
+   },
+   "market": {
+    "mvpDiscount": 0,
+    "sf30Off": false,
+    "sfBoomReduction": false,
+    "sf51015": false,
+    "sf1plus1": false,
+    "starCatch": true,
+    "safeguard": "never",
+    "sfEnhanceMode": "off",
+    "replacementCost": {},
+    "mesoPerFlame": 3000000,
+    "cubeCostOverride": {}
+   },
+   "expectedMean": 2947626174.5865483,
+   "expectedBooms": 0.13473219954648524,
+   "relTolerance": 1e-9,
+   "source": {
+    "name": "starforce.tadeucci.dev optimizer.planMetrics (exact)",
+    "url": "https://starforce.tadeucci.dev/"
+   }
+  },
+  {
+   "level": 250,
+   "from": 12,
+   "to": 17,
+   "options": {
+    "safeguard": "never",
+    "enhanceMode": 2
+   },
+   "market": {
+    "mvpDiscount": 0,
+    "sf30Off": false,
+    "sfBoomReduction": false,
+    "sf51015": false,
+    "sf1plus1": false,
+    "starCatch": true,
+    "safeguard": "never",
+    "sfEnhanceMode": 2,
+    "replacementCost": {},
+    "mesoPerFlame": 3000000,
+    "cubeCostOverride": {}
+   },
+   "expectedMean": 3350098142.955333,
+   "expectedBooms": 0.08887568657092466,
+   "relTolerance": 1e-9,
+   "source": {
+    "name": "starforce.tadeucci.dev optimizer.planMetrics (exact)",
+    "url": "https://starforce.tadeucci.dev/"
+   }
+  },
+  {
+   "level": 250,
+   "from": 12,
+   "to": 17,
+   "options": {
+    "safeguard": "never",
+    "enhanceMode": 4,
+    "mvpDiscount": 10
+   },
+   "market": {
+    "mvpDiscount": 10,
+    "sf30Off": false,
+    "sfBoomReduction": false,
+    "sf51015": false,
+    "sf1plus1": false,
+    "starCatch": true,
+    "safeguard": "never",
+    "sfEnhanceMode": 4,
+    "replacementCost": {},
+    "mesoPerFlame": 3000000,
+    "cubeCostOverride": {}
+   },
+   "expectedMean": 3807810063.9709105,
+   "expectedBooms": 0.04396495338876291,
+   "relTolerance": 1e-9,
+   "source": {
+    "name": "starforce.tadeucci.dev optimizer.planMetrics (exact)",
+    "url": "https://starforce.tadeucci.dev/"
+   }
+  },
+  {
+   "level": 250,
+   "from": 15,
+   "to": 18,
+   "options": {
+    "safeguard": "never",
+    "enhanceMode": "off"
+   },
+   "market": {
+    "mvpDiscount": 0,
+    "sf30Off": false,
+    "sfBoomReduction": false,
+    "sf51015": false,
+    "sf1plus1": false,
+    "starCatch": true,
+    "safeguard": "never",
+    "sfEnhanceMode": "off",
+    "replacementCost": {},
+    "mesoPerFlame": 3000000,
+    "cubeCostOverride": {}
+   },
+   "expectedMean": 4106113854.1057625,
+   "expectedBooms": 0.6203255344635208,
+   "relTolerance": 1e-9,
+   "source": {
+    "name": "starforce.tadeucci.dev optimizer.planMetrics (exact)",
+    "url": "https://starforce.tadeucci.dev/"
+   }
+  },
+  {
+   "level": 250,
+   "from": 15,
+   "to": 18,
+   "options": {
+    "safeguard": "never",
+    "enhanceMode": 2
+   },
+   "market": {
+    "mvpDiscount": 0,
+    "sf30Off": false,
+    "sfBoomReduction": false,
+    "sf51015": false,
+    "sf1plus1": false,
+    "starCatch": true,
+    "safeguard": "never",
+    "sfEnhanceMode": 2,
+    "replacementCost": {},
+    "mesoPerFlame": 3000000,
+    "cubeCostOverride": {}
+   },
+   "expectedMean": 4953525696.1561985,
+   "expectedBooms": 0.38010672337600526,
+   "relTolerance": 1e-9,
+   "source": {
+    "name": "starforce.tadeucci.dev optimizer.planMetrics (exact)",
+    "url": "https://starforce.tadeucci.dev/"
+   }
+  },
+  {
+   "level": 250,
+   "from": 15,
+   "to": 18,
+   "options": {
+    "safeguard": "never",
+    "enhanceMode": 4,
+    "mvpDiscount": 10
+   },
+   "market": {
+    "mvpDiscount": 10,
+    "sf30Off": false,
+    "sfBoomReduction": false,
+    "sf51015": false,
+    "sf1plus1": false,
+    "starCatch": true,
+    "safeguard": "never",
+    "sfEnhanceMode": 4,
+    "replacementCost": {},
+    "mesoPerFlame": 3000000,
+    "cubeCostOverride": {}
+   },
+   "expectedMean": 6715585964.91909,
+   "expectedBooms": 0.15565263252908454,
+   "relTolerance": 1e-9,
+   "source": {
+    "name": "starforce.tadeucci.dev optimizer.planMetrics (exact)",
+    "url": "https://starforce.tadeucci.dev/"
+   }
+  },
+  {
+   "level": 250,
+   "from": 17,
+   "to": 22,
+   "options": {
+    "safeguard": "never",
+    "enhanceMode": "off"
+   },
+   "market": {
+    "mvpDiscount": 0,
+    "sf30Off": false,
+    "sfBoomReduction": false,
+    "sf51015": false,
+    "sf1plus1": false,
+    "starCatch": true,
+    "safeguard": "never",
+    "sfEnhanceMode": "off",
+    "replacementCost": {},
+    "mesoPerFlame": 3000000,
+    "cubeCostOverride": {}
+   },
+   "expectedMean": 61125257147.40872,
+   "expectedBooms": 7.24602556343714,
+   "relTolerance": 1e-9,
+   "source": {
+    "name": "starforce.tadeucci.dev optimizer.planMetrics (exact)",
+    "url": "https://starforce.tadeucci.dev/"
+   }
+  },
+  {
+   "level": 250,
+   "from": 17,
+   "to": 22,
+   "options": {
+    "safeguard": "never",
+    "enhanceMode": 2
+   },
+   "market": {
+    "mvpDiscount": 0,
+    "sf30Off": false,
+    "sfBoomReduction": false,
+    "sf51015": false,
+    "sf1plus1": false,
+    "starCatch": true,
+    "safeguard": "never",
+    "sfEnhanceMode": 2,
+    "replacementCost": {},
+    "mesoPerFlame": 3000000,
+    "cubeCostOverride": {}
+   },
+   "expectedMean": 105912390920.4404,
+   "expectedBooms": 4.84006734251893,
+   "relTolerance": 1e-9,
+   "source": {
+    "name": "starforce.tadeucci.dev optimizer.planMetrics (exact)",
+    "url": "https://starforce.tadeucci.dev/"
+   }
+  },
+  {
+   "level": 250,
+   "from": 17,
+   "to": 22,
+   "options": {
+    "safeguard": "never",
+    "enhanceMode": 4,
+    "mvpDiscount": 10
+   },
+   "market": {
+    "mvpDiscount": 10,
+    "sf30Off": false,
+    "sfBoomReduction": false,
+    "sf51015": false,
+    "sf1plus1": false,
+    "starCatch": true,
+    "safeguard": "never",
+    "sfEnhanceMode": 4,
+    "replacementCost": {},
+    "mesoPerFlame": 3000000,
+    "cubeCostOverride": {}
+   },
+   "expectedMean": 193663880949.70102,
+   "expectedBooms": 0.11168767914032163,
+   "relTolerance": 1e-9,
+   "source": {
+    "name": "starforce.tadeucci.dev optimizer.planMetrics (exact)",
+    "url": "https://starforce.tadeucci.dev/"
+   }
+  },
+  {
+   "level": 250,
+   "from": 0,
+   "to": 22,
+   "options": {
+    "safeguard": "never",
+    "enhanceMode": "off"
+   },
+   "market": {
+    "mvpDiscount": 0,
+    "sf30Off": false,
+    "sfBoomReduction": false,
+    "sf51015": false,
+    "sf1plus1": false,
+    "starCatch": true,
+    "safeguard": "never",
+    "sfEnhanceMode": "off",
+    "replacementCost": {},
+    "mesoPerFlame": 3000000,
+    "cubeCostOverride": {}
+   },
+   "expectedMean": 64292747522.59154,
+   "expectedBooms": 7.380757762983626,
+   "relTolerance": 1e-9,
+   "source": {
+    "name": "starforce.tadeucci.dev optimizer.planMetrics (exact)",
+    "url": "https://starforce.tadeucci.dev/"
+   }
+  },
+  {
+   "level": 250,
+   "from": 0,
+   "to": 22,
+   "options": {
+    "safeguard": "never",
+    "enhanceMode": 2
+   },
+   "market": {
+    "mvpDiscount": 0,
+    "sf30Off": false,
+    "sfBoomReduction": false,
+    "sf51015": false,
+    "sf1plus1": false,
+    "starCatch": true,
+    "safeguard": "never",
+    "sfEnhanceMode": 2,
+    "replacementCost": {},
+    "mesoPerFlame": 3000000,
+    "cubeCostOverride": {}
+   },
+   "expectedMean": 109482353263.992,
+   "expectedBooms": 4.928943029089854,
+   "relTolerance": 1e-9,
+   "source": {
+    "name": "starforce.tadeucci.dev optimizer.planMetrics (exact)",
+    "url": "https://starforce.tadeucci.dev/"
+   }
+  },
+  {
+   "level": 250,
+   "from": 0,
+   "to": 22,
+   "options": {
+    "safeguard": "never",
+    "enhanceMode": 4,
+    "mvpDiscount": 10
+   },
+   "market": {
+    "mvpDiscount": 10,
+    "sf30Off": false,
+    "sfBoomReduction": false,
+    "sf51015": false,
+    "sf1plus1": false,
+    "starCatch": true,
+    "safeguard": "never",
+    "sfEnhanceMode": 4,
+    "replacementCost": {},
+    "mesoPerFlame": 3000000,
+    "cubeCostOverride": {}
+   },
+   "expectedMean": 197669568794.20856,
+   "expectedBooms": 0.15565263252908454,
+   "relTolerance": 1e-9,
+   "source": {
+    "name": "starforce.tadeucci.dev optimizer.planMetrics (exact)",
+    "url": "https://starforce.tadeucci.dev/"
+   }
+  },
+  {
+   "level": 250,
+   "from": 22,
+   "to": 24,
+   "options": {
+    "safeguard": "never",
+    "enhanceMode": "off"
+   },
+   "market": {
+    "mvpDiscount": 0,
+    "sf30Off": false,
+    "sfBoomReduction": false,
+    "sf51015": false,
+    "sf1plus1": false,
+    "starCatch": true,
+    "safeguard": "never",
+    "sfEnhanceMode": "off",
+    "replacementCost": {},
+    "mesoPerFlame": 3000000,
+    "cubeCostOverride": {}
+   },
+   "expectedMean": 275399979248.13385,
+   "expectedBooms": 35.908856445785965,
+   "relTolerance": 1e-9,
+   "source": {
+    "name": "starforce.tadeucci.dev optimizer.planMetrics (exact)",
+    "url": "https://starforce.tadeucci.dev/"
+   }
+  },
+  {
+   "level": 250,
+   "from": 22,
+   "to": 24,
+   "options": {
+    "safeguard": "never",
+    "enhanceMode": 2
+   },
+   "market": {
+    "mvpDiscount": 0,
+    "sf30Off": false,
+    "sfBoomReduction": false,
+    "sf51015": false,
+    "sf1plus1": false,
+    "starCatch": true,
+    "safeguard": "never",
+    "sfEnhanceMode": 2,
+    "replacementCost": {},
+    "mesoPerFlame": 3000000,
+    "cubeCostOverride": {}
+   },
+   "expectedMean": 470620742162.2193,
+   "expectedBooms": 25.54265391564072,
+   "relTolerance": 1e-9,
+   "source": {
+    "name": "starforce.tadeucci.dev optimizer.planMetrics (exact)",
+    "url": "https://starforce.tadeucci.dev/"
+   }
+  },
+  {
+   "level": 250,
+   "from": 22,
+   "to": 24,
+   "options": {
+    "safeguard": "never",
+    "enhanceMode": 4,
+    "mvpDiscount": 10
+   },
+   "market": {
+    "mvpDiscount": 10,
+    "sf30Off": false,
+    "sfBoomReduction": false,
+    "sf51015": false,
+    "sf1plus1": false,
+    "starCatch": true,
+    "safeguard": "never",
+    "sfEnhanceMode": 4,
+    "replacementCost": {},
+    "mesoPerFlame": 3000000,
+    "cubeCostOverride": {}
+   },
+   "expectedMean": 809790689970.4153,
+   "expectedBooms": 4.921614645356369,
+   "relTolerance": 1e-9,
+   "source": {
+    "name": "starforce.tadeucci.dev optimizer.planMetrics (exact)",
+    "url": "https://starforce.tadeucci.dev/"
+   }
+  },
+  {
+   "level": 250,
+   "from": 21,
+   "to": 25,
+   "options": {
+    "safeguard": "never",
+    "enhanceMode": "off"
+   },
+   "market": {
+    "mvpDiscount": 0,
+    "sf30Off": false,
+    "sfBoomReduction": false,
+    "sf51015": false,
+    "sf1plus1": false,
+    "starCatch": true,
+    "safeguard": "never",
+    "sfEnhanceMode": "off",
+    "replacementCost": {},
+    "mesoPerFlame": 3000000,
+    "cubeCostOverride": {}
+   },
+   "expectedMean": 866571349146.2197,
+   "expectedBooms": 112.84347226644616,
+   "relTolerance": 1e-9,
+   "source": {
+    "name": "starforce.tadeucci.dev optimizer.planMetrics (exact)",
+    "url": "https://starforce.tadeucci.dev/"
+   }
+  },
+  {
+   "level": 250,
+   "from": 21,
+   "to": 25,
+   "options": {
+    "safeguard": "never",
+    "enhanceMode": 2
+   },
+   "market": {
+    "mvpDiscount": 0,
+    "sf30Off": false,
+    "sfBoomReduction": false,
+    "sf51015": false,
+    "sf1plus1": false,
+    "starCatch": true,
+    "safeguard": "never",
+    "sfEnhanceMode": 2,
+    "replacementCost": {},
+    "mesoPerFlame": 3000000,
+    "cubeCostOverride": {}
+   },
+   "expectedMean": 1479464666073.0938,
+   "expectedBooms": 80.1221025219673,
+   "relTolerance": 1e-9,
+   "source": {
+    "name": "starforce.tadeucci.dev optimizer.planMetrics (exact)",
+    "url": "https://starforce.tadeucci.dev/"
+   }
+  },
+  {
+   "level": 250,
+   "from": 21,
+   "to": 25,
+   "options": {
+    "safeguard": "never",
+    "enhanceMode": 4,
+    "mvpDiscount": 10
+   },
+   "market": {
+    "mvpDiscount": 10,
+    "sf30Off": false,
+    "sfBoomReduction": false,
+    "sf51015": false,
+    "sf1plus1": false,
+    "starCatch": true,
+    "safeguard": "never",
+    "sfEnhanceMode": 4,
+    "replacementCost": {},
+    "mesoPerFlame": 3000000,
+    "cubeCostOverride": {}
+   },
+   "expectedMean": 2474518748728.748,
+   "expectedBooms": 15.016557707440084,
+   "relTolerance": 1e-9,
+   "source": {
+    "name": "starforce.tadeucci.dev optimizer.planMetrics (exact)",
+    "url": "https://starforce.tadeucci.dev/"
+   }
+  }
+ ],
+ "starStats": [
+  {
+   "input": {
+    "level": 200,
+    "kind": "armor"
+   },
+   "stars": 22,
+   "expected": {
+    "stat": 145,
+    "hp": 260,
+    "att": 106
+   },
+   "source": "wiki Stat Tables cumulative: Lv200 22★ stat 145 / ATT 106"
+  },
+  {
+   "input": {
+    "level": 250,
+    "kind": "armor"
+   },
+   "stars": 30,
+   "expected": {
+    "stat": 159,
+    "hp": 260,
+    "att": 345
+   },
+   "source": "wiki: Lv250 30★ stat 159 / ATT 345"
+  },
+  {
+   "input": {
+    "level": 160,
+    "kind": "armor"
+   },
+   "stars": 17,
+   "expected": {
+    "stat": 66,
+    "hp": 260,
+    "att": 21
+   },
+   "source": "wiki: Lv160 17★ stat 66 / ATT 21"
+  },
+  {
+   "input": {
+    "level": 150,
+    "kind": "armor"
+   },
+   "stars": 25,
+   "expected": {
+    "stat": 117,
+    "hp": 260,
+    "att": 145
+   },
+   "source": "wiki: Lv150 25★ stat 117 / ATT 145"
+  },
+  {
+   "input": {
+    "level": 200,
+    "kind": "weapon",
+    "weaponAttBeforeSf": 300
+   },
+   "stars": 22,
+   "expected": {
+    "stat": 145,
+    "hp": 255,
+    "att": 215
+   },
+   "source": "wiki: Lv200 weapon 22★ = f(15)+102 ATT, stat 145"
+  },
+  {
+   "input": {
+    "level": 150,
+    "kind": "armor",
+    "superior": true
+   },
+   "stars": 15,
+   "expected": {
+    "stat": 115,
+    "hp": 0,
+    "att": 150
+   },
+   "source": "wiki: Tyrant (150+) 15★ all stat 115 / ATT 150"
+  }
+ ],
+ "notes": [
+  "HP: the wiki armor delta rows sum to 260 at 15★ while its cumulative table says 255; module follows the delta rows. Only matters for Demon Avenger."
+ ],
+ "modeProfiles": [
+  {
+   "note": "default non-pitched profile 1-1-4-4",
+   "item": {
+    "id": "x",
+    "name": "x",
+    "set": "Arcane Umbra",
+    "slot": "face",
+    "level": 200,
+    "base": {},
+    "maxStars": 30,
+    "flameable": true,
+    "starforceable": true
+   },
+   "from": 17,
+   "to": 22,
+   "market": {
+    "mvpDiscount": 0,
+    "sf30Off": false,
+    "sf51015": false,
+    "starCatch": true,
+    "safeguard": "auto",
+    "replacementCost": {
+     "x": 3000000000
+    },
+    "mesoPerFlame": 3000000,
+    "cubeCostOverride": {}
+   },
+   "expectedMean": 45675282661.18152,
+   "expectedBooms": 1.191769211388261,
+   "expectedPolicy": [
+    {
+     "star": 15,
+     "mode": 1,
+     "safeguard": true
+    },
+    {
+     "star": 16,
+     "mode": 1,
+     "safeguard": true
+    },
+    {
+     "star": 17,
+     "mode": 1,
+     "safeguard": true
+    },
+    {
+     "star": 18,
+     "mode": 1,
+     "safeguard": false
+    },
+    {
+     "star": 19,
+     "mode": 1,
+     "safeguard": false
+    },
+    {
+     "star": 20,
+     "mode": 4,
+     "safeguard": false
+    },
+    {
+     "star": 21,
+     "mode": 4,
+     "safeguard": false
+    }
+   ],
+   "relTolerance": 1e-9,
+   "source": "self-consistency (module output); policy must follow the profile at 18-21★"
+  },
+  {
+   "note": "default pitched/brilliant profile 4-4-4-4",
+   "item": {
+    "id": "x",
+    "name": "x",
+    "set": "Pitched Boss",
+    "slot": "face",
+    "level": 200,
+    "base": {},
+    "maxStars": 30,
+    "flameable": true,
+    "starforceable": true
+   },
+   "from": 17,
+   "to": 22,
+   "market": {
+    "mvpDiscount": 0,
+    "sf30Off": false,
+    "sf51015": false,
+    "starCatch": true,
+    "safeguard": "auto",
+    "replacementCost": {
+     "x": 3000000000
+    },
+    "mesoPerFlame": 3000000,
+    "cubeCostOverride": {}
+   },
+   "expectedMean": 99362354325.39693,
+   "expectedBooms": 0,
+   "expectedPolicy": [
+    {
+     "star": 17,
+     "mode": 1,
+     "safeguard": true
+    },
+    {
+     "star": 18,
+     "mode": 4,
+     "safeguard": false
+    },
+    {
+     "star": 19,
+     "mode": 4,
+     "safeguard": false
+    },
+    {
+     "star": 20,
+     "mode": 4,
+     "safeguard": false
+    },
+    {
+     "star": 21,
+     "mode": 4,
+     "safeguard": false
+    }
+   ],
+   "relTolerance": 1e-9,
+   "source": "self-consistency (module output); policy must follow the profile at 18-21★"
+  },
+  {
+   "note": "user profile 1-1-1-1",
+   "item": {
+    "id": "x",
+    "name": "x",
+    "set": "Arcane Umbra",
+    "slot": "face",
+    "level": 200,
+    "base": {},
+    "maxStars": 30,
+    "flameable": true,
+    "starforceable": true
+   },
+   "from": 17,
+   "to": 22,
+   "market": {
+    "mvpDiscount": 0,
+    "sf30Off": false,
+    "sf51015": false,
+    "starCatch": true,
+    "safeguard": "auto",
+    "replacementCost": {
+     "x": 3000000000
+    },
+    "mesoPerFlame": 3000000,
+    "cubeCostOverride": {},
+    "sfModeProfiles": {
+     "other": [
+      1,
+      1,
+      1,
+      1
+     ]
+    }
+   },
+   "expectedMean": 52253527406.96561,
+   "expectedBooms": 4.238986939981017,
+   "expectedPolicy": [
+    {
+     "star": 15,
+     "mode": 1,
+     "safeguard": true
+    },
+    {
+     "star": 16,
+     "mode": 1,
+     "safeguard": true
+    },
+    {
+     "star": 17,
+     "mode": 1,
+     "safeguard": true
+    },
+    {
+     "star": 18,
+     "mode": 1,
+     "safeguard": false
+    },
+    {
+     "star": 19,
+     "mode": 1,
+     "safeguard": false
+    },
+    {
+     "star": 20,
+     "mode": 1,
+     "safeguard": false
+    },
+    {
+     "star": 21,
+     "mode": 1,
+     "safeguard": false
+    }
+   ],
+   "relTolerance": 1e-9,
+   "source": "self-consistency (module output); policy must follow the profile at 18-21★"
+  },
+  {
+   "note": "pitched default with Shining Star Force",
+   "item": {
+    "id": "x",
+    "name": "x",
+    "set": "Pitched Boss",
+    "slot": "face",
+    "level": 200,
+    "base": {},
+    "maxStars": 30,
+    "flameable": true,
+    "starforceable": true
+   },
+   "from": 17,
+   "to": 22,
+   "market": {
+    "mvpDiscount": 0,
+    "sf30Off": true,
+    "sf51015": false,
+    "starCatch": true,
+    "safeguard": "auto",
+    "replacementCost": {
+     "x": 3000000000
+    },
+    "mesoPerFlame": 3000000,
+    "cubeCostOverride": {}
+   },
+   "expectedMean": 70051509361.11119,
+   "expectedBooms": 0,
+   "expectedPolicy": [
+    {
+     "star": 17,
+     "mode": 1,
+     "safeguard": true
+    },
+    {
+     "star": 18,
+     "mode": 4,
+     "safeguard": false
+    },
+    {
+     "star": 19,
+     "mode": 4,
+     "safeguard": false
+    },
+    {
+     "star": 20,
+     "mode": 4,
+     "safeguard": false
+    },
+    {
+     "star": 21,
+     "mode": 4,
+     "safeguard": false
+    }
+   ],
+   "relTolerance": 1e-9,
+   "source": "self-consistency (module output); policy must follow the profile at 18-21★"
+  }
+ ]
+}

@@ -1,0 +1,485 @@
+{
+  "version": 1,
+  "equivalences": {
+    "classId": "ren",
+    "level": 291,
+    "rows": {
+      "STAT": {
+        "amount": 100,
+        "fdPct": 0.797
+      },
+      "STATp": {
+        "amount": 10,
+        "fdPct": 0.918
+      },
+      "SUBSTATp": {
+        "amount": 10,
+        "fdPct": 0.14
+      },
+      "ATT": {
+        "amount": 30,
+        "fdPct": 0.768
+      },
+      "SUBSTAT": {
+        "amount": 100,
+        "fdPct": 0.085
+      },
+      "BOSSp": {
+        "amount": 40,
+        "fdPct": 3.675
+      },
+      "ATTp": {
+        "amount": 10,
+        "fdPct": 4.288
+      },
+      "IED": {
+        "amount": 40,
+        "fdPct": 2.472
+      },
+      "CRITDMGp": {
+        "amount": 8,
+        "fdPct": 2.664
+      }
+    }
+  },
+  "equips": {
+    "face": {
+      "slot": "face",
+      "itemId": "berserked",
+      "stars": 22,
+      "potTier": "legendary",
+      "pot": [
+        {
+          "key": "STRp",
+          "value": 13
+        },
+        {
+          "key": "STRp",
+          "value": 10
+        },
+        {
+          "key": "ALLp",
+          "value": 7
+        }
+      ],
+      "bpotTier": "legendary",
+      "bpot": [],
+      "flame": {
+        "STR": 70,
+        "DEX": 25,
+        "ALLp": 6
+      }
+    },
+    "eye": {
+      "slot": "eye",
+      "itemId": "magic-eyepatch",
+      "stars": 22,
+      "potTier": "legendary",
+      "pot": [
+        {
+          "key": "ALLp",
+          "value": 10
+        },
+        {
+          "key": "STRp",
+          "value": 10
+        },
+        {
+          "key": "STRp",
+          "value": 10
+        }
+      ],
+      "bpotTier": "legendary",
+      "bpot": [],
+      "flame": {
+        "STR": 79,
+        "ALLp": 5
+      }
+    },
+    "earring": {
+      "slot": "earring",
+      "itemId": "gollux-earring",
+      "stars": 22,
+      "potTier": "legendary",
+      "pot": [
+        {
+          "key": "STRp",
+          "value": 12
+        },
+        {
+          "key": "ALLp",
+          "value": 6
+        },
+        {
+          "key": "STRp",
+          "value": 9
+        }
+      ],
+      "bpotTier": "legendary",
+      "bpot": [],
+      "flame": {
+        "ALLp": 4
+      }
+    },
+    "pendant1": {
+      "slot": "pendant1",
+      "itemId": "daybreak-pendant",
+      "stars": 23,
+      "potTier": "legendary",
+      "pot": [
+        {
+          "key": "STRp",
+          "value": 12
+        },
+        {
+          "key": "ALLp",
+          "value": 6
+        },
+        {
+          "key": "STRp",
+          "value": 9
+        }
+      ],
+      "bpotTier": "legendary",
+      "bpot": [],
+      "flame": {
+        "STR": 56,
+        "ALLp": 6
+      }
+    },
+    "pendant2": {
+      "slot": "pendant2",
+      "itemId": "source-of-suffering",
+      "stars": 22,
+      "potTier": "legendary",
+      "pot": [
+        {
+          "key": "STRp",
+          "value": 13
+        },
+        {
+          "key": "STRp",
+          "value": 10
+        },
+        {
+          "key": "STRp",
+          "value": 10
+        }
+      ],
+      "bpotTier": "legendary",
+      "bpot": [],
+      "flame": {
+        "STR": 54,
+        "DEX": 45,
+        "ALLp": 6
+      }
+    },
+    "ring2": {
+      "slot": "ring2",
+      "itemId": "endless-terror",
+      "stars": 22,
+      "potTier": "legendary",
+      "pot": [
+        {
+          "key": "STRp",
+          "value": 13
+        },
+        {
+          "key": "ALLp",
+          "value": 7
+        },
+        {
+          "key": "STRp",
+          "value": 10
+        }
+      ],
+      "bpotTier": "legendary",
+      "bpot": [],
+      "flame": {}
+    },
+    "ring3": {
+      "slot": "ring3",
+      "itemId": "dawn-guardian-ring",
+      "stars": 23,
+      "potTier": "legendary",
+      "pot": [
+        {
+          "key": "ALLp",
+          "value": 10
+        },
+        {
+          "key": "STRp",
+          "value": 10
+        },
+        {
+          "key": "ALLp",
+          "value": 7
+        }
+      ],
+      "bpotTier": "legendary",
+      "bpot": [],
+      "flame": {}
+    },
+    "ring4": {
+      "slot": "ring4",
+      "itemId": "gollux-ring",
+      "stars": 22,
+      "potTier": "legendary",
+      "pot": [
+        {
+          "key": "STRp",
+          "value": 12
+        },
+        {
+          "key": "STRp",
+          "value": 9
+        },
+        {
+          "key": "ALLp",
+          "value": 6
+        }
+      ],
+      "bpotTier": "legendary",
+      "bpot": [],
+      "flame": {}
+    },
+    "pocket": {
+      "slot": "pocket",
+      "itemId": "cursed-spellbook",
+      "stars": 0,
+      "potTier": "legendary",
+      "pot": [],
+      "bpotTier": "legendary",
+      "bpot": [],
+      "flame": {
+        "STR": 94,
+        "DEX": 20,
+        "ALLp": 4
+      }
+    },
+    "weapon": {
+      "slot": "weapon",
+      "itemId": "genesis-weapon",
+      "stars": 22,
+      "potTier": "legendary",
+      "pot": [
+        {
+          "key": "BOSSp",
+          "value": 40
+        },
+        {
+          "key": "ATTp",
+          "value": 10
+        },
+        {
+          "key": "ATTp",
+          "value": 10
+        }
+      ],
+      "bpotTier": "legendary",
+      "bpot": [],
+      "flame": {
+        "STR": 72,
+        "DEX": 42,
+        "ATT": 210
+      },
+      "baseAtt": 340
+    },
+    "secondary": {
+      "slot": "secondary",
+      "itemId": "astra-secondary",
+      "stars": 22,
+      "potTier": "legendary",
+      "pot": [
+        {
+          "key": "ATTp",
+          "value": 13
+        },
+        {
+          "key": "BOSSp",
+          "value": 35
+        },
+        {
+          "key": "ATTp",
+          "value": 10
+        }
+      ],
+      "bpotTier": "legendary",
+      "bpot": [],
+      "flame": {}
+    },
+    "emblem": {
+      "slot": "emblem",
+      "itemId": "mitras-rage",
+      "stars": 0,
+      "potTier": "legendary",
+      "pot": [
+        {
+          "key": "ATTp",
+          "value": 13
+        },
+        {
+          "key": "ATTp",
+          "value": 10
+        },
+        {
+          "key": "ATTp",
+          "value": 10
+        }
+      ],
+      "bpotTier": "legendary",
+      "bpot": [],
+      "flame": {}
+    },
+    "hat": {
+      "slot": "hat",
+      "itemId": "eternal-hat",
+      "stars": 21,
+      "potTier": "legendary",
+      "pot": [
+        {
+          "key": "CDR",
+          "value": 2
+        },
+        {
+          "key": "STRp",
+          "value": 13
+        },
+        {
+          "key": "STRp",
+          "value": 10
+        }
+      ],
+      "bpotTier": "legendary",
+      "bpot": [],
+      "flame": {
+        "STR": 119,
+        "DEX": 35,
+        "ALLp": 5
+      }
+    },
+    "top": {
+      "slot": "top",
+      "itemId": "eternal-top",
+      "stars": 21,
+      "potTier": "legendary",
+      "pot": [
+        {
+          "key": "STRp",
+          "value": 13
+        },
+        {
+          "key": "STRp",
+          "value": 10
+        },
+        {
+          "key": "ALLp",
+          "value": 7
+        }
+      ],
+      "bpotTier": "legendary",
+      "bpot": [],
+      "flame": {
+        "STR": 100,
+        "DEX": 56,
+        "ALLp": 4
+      }
+    },
+    "bottom": {
+      "slot": "bottom",
+      "itemId": "eternal-bottom",
+      "stars": 21,
+      "potTier": "legendary",
+      "pot": [
+        {
+          "key": "ALLp",
+          "value": 10
+        },
+        {
+          "key": "STRp",
+          "value": 10
+        },
+        {
+          "key": "ALLp",
+          "value": 7
+        }
+      ],
+      "bpotTier": "legendary",
+      "bpot": [],
+      "flame": {
+        "STR": 100,
+        "DEX": 56,
+        "ALLp": 4
+      }
+    },
+    "belt": {
+      "slot": "belt",
+      "itemId": "dreamy-belt",
+      "stars": 22,
+      "potTier": "legendary",
+      "pot": [
+        {
+          "key": "STRp",
+          "value": 13
+        },
+        {
+          "key": "ALLp",
+          "value": 7
+        },
+        {
+          "key": "STRp",
+          "value": 10
+        }
+      ],
+      "bpotTier": "legendary",
+      "bpot": [],
+      "flame": {
+        "STR": 90,
+        "DEX": 24,
+        "ALLp": 5
+      }
+    }
+  },
+  "market": {
+    "mvpDiscount": 5,
+    "sf30Off": true,
+    "sf51015": false,
+    "starCatch": true,
+    "safeguard": "always",
+    "replacementCost": {
+      "Chaos Root Abyss": 1500000000,
+      "AbsoLab": 1500000000,
+      "Arcane Umbra": 4000000000,
+      "Eternal": 15000000000,
+      "Tyrant": 5000000000,
+      "Pitched Boss": 15000000000,
+      "Brilliant Boss": 30000000000,
+      "Superior Gollux": 2000000000,
+      "Dawn Boss": 1000000000,
+      "Boss Accessory": 500000000,
+      "Meister": 1000000000,
+      "Astra": 1000000000
+    },
+    "mesoPerFlame": 3000000,
+    "cubeCostOverride": {},
+    "sfEnhanceMode": "profile",
+    "sfModeProfiles": {
+      "pitched": [
+        4,
+        4,
+        4,
+        4
+      ],
+      "other": [
+        1,
+        1,
+        4,
+        4
+      ]
+    },
+    "sf1plus1": false,
+    "includeCubeFee": true,
+    "server": "heroic",
+    "cubeSale": true
+  }
+}

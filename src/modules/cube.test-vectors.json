@@ -1,0 +1,431 @@
+{
+  "about": "Cube module test vectors. probability(slot, cube, level, makeSpec(spec)) must equal expectedP (rel. tol 1e-9). expectedCubeCost(slot, level, currentTier, makeSpec(spec), {cubes}).expectedCubes must equal expectedCubes (±0.05).",
+  "generated": "2026-11-05",
+  "probability": [
+    {
+      "id": "weapon150-glow-21att",
+      "slot": "weapon",
+      "level": 150,
+      "cube": "glowing",
+      "spec": {
+        "sums": [
+          {
+            "cats": [
+              "ATT"
+            ],
+            "min": 21
+          }
+        ]
+      },
+      "expectedP": 0.006816241180897032,
+      "reference": {
+        "url": "https://brendonmay.github.io/cubingCalculator/",
+        "call": "getProbability(3, {\"percAtt\":21}, 'weapon', 'red', 150)"
+      }
+    },
+    {
+      "id": "weapon150-bright-21att",
+      "slot": "weapon",
+      "level": 150,
+      "cube": "bright",
+      "spec": {
+        "sums": [
+          {
+            "cats": [
+              "ATT"
+            ],
+            "min": 21
+          }
+        ]
+      },
+      "expectedP": 0.0070979606510397815,
+      "reference": {
+        "url": "https://brendonmay.github.io/cubingCalculator/",
+        "call": "getProbability(3, {\"percAtt\":21}, 'weapon', 'black', 150)"
+      }
+    },
+    {
+      "id": "weapon200-glow-33att",
+      "slot": "weapon",
+      "level": 200,
+      "cube": "glowing",
+      "spec": {
+        "sums": [
+          {
+            "cats": [
+              "ATT"
+            ],
+            "min": 33
+          }
+        ]
+      },
+      "expectedP": 0.00022960357233156006,
+      "reference": {
+        "url": "https://brendonmay.github.io/cubingCalculator/",
+        "call": "getProbability(3, {\"percAtt\":33}, 'weapon', 'red', 200)"
+      }
+    },
+    {
+      "id": "weapon200-glow-1att1boss1ied",
+      "slot": "weapon",
+      "level": 200,
+      "cube": "glowing",
+      "spec": {
+        "counts": {
+          "ATT": 1,
+          "BOSS": 1,
+          "IED": 1
+        }
+      },
+      "expectedP": 0.0029373379462501992,
+      "reference": {
+        "url": "https://brendonmay.github.io/cubingCalculator/",
+        "call": "getProbability(3, {\"lineAtt\":1,\"lineBoss\":1,\"lineIed\":1}, 'weapon', 'red', 200)"
+      }
+    },
+    {
+      "id": "weapon200-bright-2att1boss",
+      "slot": "weapon",
+      "level": 200,
+      "cube": "bright",
+      "spec": {
+        "counts": {
+          "ATT": 2,
+          "BOSS": 1
+        }
+      },
+      "expectedP": 0.00117998648034054,
+      "reference": {
+        "url": "https://brendonmay.github.io/cubingCalculator/",
+        "call": "getProbability(3, {\"lineAtt\":2,\"lineBoss\":1}, 'weapon', 'black', 200)"
+      }
+    },
+    {
+      "id": "secondary160-glow-3boss",
+      "slot": "secondary",
+      "level": 160,
+      "cube": "glowing",
+      "spec": {
+        "counts": {
+          "BOSS": 3
+        }
+      },
+      "expectedP": 0.000499192006902456,
+      "reference": {
+        "url": "https://brendonmay.github.io/cubingCalculator/",
+        "call": "getProbability(3, {\"lineBoss\":3}, 'secondary', 'red', 160)"
+      }
+    },
+    {
+      "id": "emblem200-glow-2att1ied",
+      "slot": "emblem",
+      "level": 200,
+      "cube": "glowing",
+      "spec": {
+        "counts": {
+          "ATT": 2,
+          "IED": 1
+        }
+      },
+      "expectedP": 0.0012789238352444521,
+      "reference": {
+        "url": "https://brendonmay.github.io/cubingCalculator/",
+        "call": "getProbability(3, {\"lineAtt\":2,\"lineIed\":1}, 'emblem', 'red', 200)"
+      }
+    },
+    {
+      "id": "hat160-glow-33luk",
+      "slot": "hat",
+      "level": 160,
+      "cube": "glowing",
+      "spec": {
+        "sums": [
+          {
+            "cats": [
+              "LUK",
+              "ALL"
+            ],
+            "min": 33
+          }
+        ]
+      },
+      "expectedP": 0.0011344544882190598,
+      "reference": {
+        "url": "https://brendonmay.github.io/cubingCalculator/",
+        "call": "getProbability(3, {\"percStat\":33}, 'hat', 'red', 160)"
+      }
+    },
+    {
+      "id": "hat160-bright-4sCDR",
+      "slot": "hat",
+      "level": 160,
+      "cube": "bright",
+      "spec": {
+        "sums": [
+          {
+            "cats": [
+              "CDR"
+            ],
+            "min": 4
+          }
+        ]
+      },
+      "expectedP": 0.000625234605809951,
+      "reference": {
+        "url": "https://brendonmay.github.io/cubingCalculator/",
+        "call": "getProbability(3, {\"secCooldown\":4}, 'hat', 'black', 160)"
+      }
+    },
+    {
+      "id": "hat160-bright-2sCDR-10stat",
+      "slot": "hat",
+      "level": 160,
+      "cube": "bright",
+      "spec": {
+        "sums": [
+          {
+            "cats": [
+              "CDR"
+            ],
+            "min": 2
+          },
+          {
+            "cats": [
+              "STR",
+              "ALL"
+            ],
+            "min": 10
+          }
+        ]
+      },
+      "expectedP": 0.013213454796799402,
+      "reference": {
+        "url": "https://brendonmay.github.io/cubingCalculator/",
+        "call": "getProbability(3, {\"secCooldown\":2,\"percStat\":10}, 'hat', 'black', 160)"
+      }
+    },
+    {
+      "id": "gloves160-bright-2cd",
+      "slot": "gloves",
+      "level": 160,
+      "cube": "bright",
+      "spec": {
+        "counts": {
+          "CD": 2
+        }
+      },
+      "expectedP": 0.0025839842919476077,
+      "reference": {
+        "url": "https://brendonmay.github.io/cubingCalculator/",
+        "call": "getProbability(3, {\"lineCritDamage\":2}, 'gloves', 'black', 160)"
+      }
+    },
+    {
+      "id": "gloves160-glow-1cd-10stat",
+      "slot": "gloves",
+      "level": 160,
+      "cube": "glowing",
+      "spec": {
+        "counts": {
+          "CD": 1
+        },
+        "sums": [
+          {
+            "cats": [
+              "STR",
+              "ALL"
+            ],
+            "min": 10
+          }
+        ]
+      },
+      "expectedP": 0.021082993654079098,
+      "reference": {
+        "url": "https://brendonmay.github.io/cubingCalculator/",
+        "call": "getProbability(3, {\"lineCritDamage\":1,\"percStat\":10}, 'gloves', 'red', 160)"
+      }
+    },
+    {
+      "id": "ring150-glow-27stat",
+      "slot": "ring",
+      "level": 150,
+      "cube": "glowing",
+      "spec": {
+        "sums": [
+          {
+            "cats": [
+              "STR",
+              "ALL"
+            ],
+            "min": 27
+          }
+        ]
+      },
+      "expectedP": 0.005508105238555921,
+      "reference": {
+        "url": "https://brendonmay.github.io/cubingCalculator/",
+        "call": "getProbability(3, {\"percStat\":27}, 'accessory', 'red', 150)"
+      }
+    },
+    {
+      "id": "top150-glow-30stat",
+      "slot": "top",
+      "level": 150,
+      "cube": "glowing",
+      "spec": {
+        "sums": [
+          {
+            "cats": [
+              "STR",
+              "ALL"
+            ],
+            "min": 30
+          }
+        ]
+      },
+      "expectedP": 0.0009020071855303741,
+      "reference": {
+        "url": "https://brendonmay.github.io/cubingCalculator/",
+        "call": "getProbability(3, {\"percStat\":30}, 'top', 'red', 150)"
+      }
+    },
+    {
+      "id": "shoes200-bright-36stat",
+      "slot": "shoes",
+      "level": 200,
+      "cube": "bright",
+      "spec": {
+        "sums": [
+          {
+            "cats": [
+              "STR",
+              "ALL"
+            ],
+            "min": 36
+          }
+        ]
+      },
+      "expectedP": 0.000317615255073594,
+      "reference": {
+        "url": "https://brendonmay.github.io/cubingCalculator/",
+        "call": "getProbability(3, {\"percStat\":36}, 'shoes', 'black', 200)"
+      }
+    },
+    {
+      "id": "cape160-glow-xenon20",
+      "slot": "cape",
+      "level": 160,
+      "cube": "glowing",
+      "spec": {
+        "xenonMin": 20
+      },
+      "expectedP": 0.0062921292506826435,
+      "reference": {
+        "url": "https://brendonmay.github.io/cubingCalculator/",
+        "call": "getProbability(3, {\"percAllStat\":20}, 'cape', 'red', 160)"
+      }
+    },
+    {
+      "id": "belt160-glow-da26hp",
+      "slot": "belt",
+      "level": 160,
+      "cube": "glowing",
+      "spec": {
+        "sums": [
+          {
+            "cats": [
+              "HP"
+            ],
+            "min": 26
+          }
+        ]
+      },
+      "expectedP": 0.003314745563069304,
+      "reference": {
+        "url": "https://brendonmay.github.io/cubingCalculator/",
+        "call": "getProbability(3, {\"percHp\":26}, 'belt', 'red', 160)"
+      }
+    },
+    {
+      "id": "heart160-bright-23stat",
+      "slot": "heart",
+      "level": 160,
+      "cube": "bright",
+      "spec": {
+        "sums": [
+          {
+            "cats": [
+              "STR",
+              "ALL"
+            ],
+            "min": 23
+          }
+        ]
+      },
+      "expectedP": 0.052752293621431405,
+      "reference": {
+        "url": "https://brendonmay.github.io/cubingCalculator/",
+        "call": "getProbability(3, {\"percStat\":23}, 'heart', 'black', 160)"
+      }
+    }
+  ],
+  "cost": [
+    {
+      "id": "weapon150-glow-21att-legendary",
+      "slot": "weapon",
+      "level": 150,
+      "cubes": [
+        "glowing"
+      ],
+      "spec": {
+        "sums": [
+          {
+            "cats": [
+              "ATT"
+            ],
+            "min": 21
+          }
+        ]
+      },
+      "expectedCubes": 146.7,
+      "expectedMesoMean": 1826519877,
+      "p90Mesos": 4195650000,
+      "mine": {
+        "cubes": 146.7,
+        "mean": 1826519877,
+        "p90": 4195650000
+      },
+      "reference": {
+        "url": "https://maplestorycalculator.com/cubing-calculator/",
+        "note": "Default scenario: Legendary lvl 150 weapon, Glowing/Red, 21%+ ATT, reveal fee on (12,450,000 per cube). Mean 146.7 cubes, 1,826,519,877 mesos; 90% budget 337 cubes = 4,195,650,000."
+      }
+    },
+    {
+      "id": "weapon150-bright-21att-legendary",
+      "slot": "weapon",
+      "level": 150,
+      "cubes": [
+        "bright"
+      ],
+      "spec": {
+        "sums": [
+          {
+            "cats": [
+              "ATT"
+            ],
+            "min": 21
+          }
+        ]
+      },
+      "expectedCubes": 140.9,
+      "mine": {
+        "cubes": 140.9,
+        "mean": 3162880312
+      },
+      "reference": {
+        "url": "https://maplestorycalculator.com/cubing-calculator/",
+        "note": "Same page, FAQ: model averages 146.7 Glowing vs 140.9 Bright cubes."
+      }
+    }
+  ]
+}

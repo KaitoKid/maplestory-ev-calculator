@@ -1,0 +1,1035 @@
+{
+ "description": "Flame module test vectors. Probabilities are per single reset/flame, P(flame score >= target). Score = sum(stat*weight) + ATT*att + AllStat%*allPct + Boss%*bossPct + Dmg%*dmgPct.",
+ "capturedOn": "2026-11-05",
+ "probabilityVectors": {
+  "source": "devcomma KMS bonus-stat calculator (uses Nexon's official KMS tables)",
+  "url": "https://tools.devcomma.com/calculators/maple-additional-option",
+  "tolerance": "absolute 1e-6 (site prints 4 decimals of a percent)",
+  "knownDisagreement": "Level 250 cases: devcomma uses 13 single stat per tier at Lv 250; the MapleStory Wiki, WhackyBeanz and MathBro use 12 (we follow 12). Those vectors are marked expectMismatch.",
+  "cases": [
+   {
+    "class": {
+     "main": "STR",
+     "secondary": [
+      "DEX"
+     ],
+     "attack": "ATT"
+    },
+    "spec": {
+     "level": 200,
+     "isWeapon": false,
+     "flameAdvantaged": true,
+     "baseAtt": 0
+    },
+    "weights": {
+     "stat": {
+      "STR": 1,
+      "DEX": 0.125
+     },
+     "att": 4,
+     "allPct": 10,
+     "bossPct": 0,
+     "dmgPct": 0
+    },
+    "target": 100,
+    "expected": {
+     "powerful": 0.044615999999999996,
+     "reset": 0.075041,
+     "abyssal": 0.10387,
+     "drop": 0.042052
+    },
+    "expectMismatch": false
+   },
+   {
+    "class": {
+     "main": "STR",
+     "secondary": [
+      "DEX"
+     ],
+     "attack": "ATT"
+    },
+    "spec": {
+     "level": 200,
+     "isWeapon": false,
+     "flameAdvantaged": true,
+     "baseAtt": 0
+    },
+    "weights": {
+     "stat": {
+      "STR": 1,
+      "DEX": 0.125
+     },
+     "att": 4,
+     "allPct": 10,
+     "bossPct": 0,
+     "dmgPct": 0
+    },
+    "target": 150,
+    "expected": {
+     "powerful": 0.001003,
+     "reset": 0.003215,
+     "abyssal": 0.006679000000000001,
+     "drop": 0.001003
+    },
+    "expectMismatch": false
+   },
+   {
+    "class": {
+     "main": "STR",
+     "secondary": [
+      "DEX"
+     ],
+     "attack": "ATT"
+    },
+    "spec": {
+     "level": 160,
+     "isWeapon": false,
+     "flameAdvantaged": true,
+     "baseAtt": 0
+    },
+    "weights": {
+     "stat": {
+      "STR": 1,
+      "DEX": 0.125
+     },
+     "att": 4,
+     "allPct": 10,
+     "bossPct": 0,
+     "dmgPct": 0
+    },
+    "target": 120,
+    "expected": {
+     "powerful": 0.004177,
+     "reset": 0.010073,
+     "abyssal": 0.018281000000000002,
+     "drop": 0.0038829999999999997
+    },
+    "expectMismatch": false
+   },
+   {
+    "class": {
+     "main": "STR",
+     "secondary": [
+      "DEX"
+     ],
+     "attack": "ATT"
+    },
+    "spec": {
+     "level": 250,
+     "isWeapon": false,
+     "flameAdvantaged": true,
+     "baseAtt": 0
+    },
+    "weights": {
+     "stat": {
+      "STR": 1,
+      "DEX": 0.125
+     },
+     "att": 4,
+     "allPct": 10,
+     "bossPct": 0,
+     "dmgPct": 0
+    },
+    "target": 150,
+    "expected": {
+     "powerful": 0.004505,
+     "reset": 0.011231999999999999,
+     "abyssal": 0.020569,
+     "drop": 0.004206
+    },
+    "expectMismatch": true
+   },
+   {
+    "class": {
+     "main": "STR",
+     "secondary": [
+      "DEX"
+     ],
+     "attack": "ATT"
+    },
+    "spec": {
+     "level": 250,
+     "isWeapon": false,
+     "flameAdvantaged": true,
+     "baseAtt": 0
+    },
+    "weights": {
+     "stat": {
+      "STR": 1,
+      "DEX": 0.125
+     },
+     "att": 4,
+     "allPct": 10,
+     "bossPct": 0,
+     "dmgPct": 0
+    },
+    "target": 180,
+    "expected": {
+     "powerful": 0.000308,
+     "reset": 0.001172,
+     "abyssal": 0.002792,
+     "drop": 0.000319
+    },
+    "expectMismatch": true
+   },
+   {
+    "class": {
+     "main": "STR",
+     "secondary": [
+      "DEX"
+     ],
+     "attack": "ATT"
+    },
+    "spec": {
+     "level": 150,
+     "isWeapon": false,
+     "flameAdvantaged": true,
+     "baseAtt": 0
+    },
+    "weights": {
+     "stat": {
+      "STR": 1,
+      "DEX": 0.125
+     },
+     "att": 4,
+     "allPct": 10,
+     "bossPct": 0,
+     "dmgPct": 0
+    },
+    "target": 100,
+    "expected": {
+     "powerful": 0.011706000000000001,
+     "reset": 0.023965,
+     "abyssal": 0.036915,
+     "drop": 0.010875999999999999
+    },
+    "expectMismatch": false
+   },
+   {
+    "class": {
+     "main": "STR",
+     "secondary": [
+      "DEX"
+     ],
+     "attack": "ATT"
+    },
+    "spec": {
+     "level": 150,
+     "isWeapon": false,
+     "flameAdvantaged": false,
+     "baseAtt": 0
+    },
+    "weights": {
+     "stat": {
+      "STR": 1,
+      "DEX": 0.125
+     },
+     "att": 4,
+     "allPct": 10,
+     "bossPct": 0,
+     "dmgPct": 0
+    },
+    "target": 60,
+    "expected": {
+     "powerful": 0.001342,
+     "reset": 0.0035870000000000003,
+     "abyssal": 0.006984000000000001,
+     "drop": 0.001384
+    },
+    "expectMismatch": false
+   },
+   {
+    "class": {
+     "main": "STR",
+     "secondary": [
+      "DEX"
+     ],
+     "attack": "ATT"
+    },
+    "spec": {
+     "level": 150,
+     "isWeapon": false,
+     "flameAdvantaged": false,
+     "baseAtt": 0
+    },
+    "weights": {
+     "stat": {
+      "STR": 1,
+      "DEX": 0.125
+     },
+     "att": 4,
+     "allPct": 10,
+     "bossPct": 0,
+     "dmgPct": 0
+    },
+    "target": 40,
+    "expected": {
+     "powerful": 0.026602999999999998,
+     "reset": 0.048902,
+     "abyssal": 0.072333,
+     "drop": 0.026095
+    },
+    "expectMismatch": false
+   },
+   {
+    "class": {
+     "main": "STR",
+     "secondary": [
+      "DEX"
+     ],
+     "attack": "ATT"
+    },
+    "spec": {
+     "level": 200,
+     "isWeapon": false,
+     "flameAdvantaged": false,
+     "baseAtt": 0
+    },
+    "weights": {
+     "stat": {
+      "STR": 1,
+      "DEX": 0.125
+     },
+     "att": 4,
+     "allPct": 10,
+     "bossPct": 0,
+     "dmgPct": 0
+    },
+    "target": 70,
+    "expected": {
+     "powerful": 0.001751,
+     "reset": 0.0047020000000000005,
+     "abyssal": 0.009108,
+     "drop": 0.0017699999999999999
+    },
+    "expectMismatch": false
+   },
+   {
+    "class": {
+     "main": "STR",
+     "secondary": [
+      "DEX"
+     ],
+     "attack": "ATT"
+    },
+    "spec": {
+     "level": 140,
+     "isWeapon": false,
+     "flameAdvantaged": true,
+     "baseAtt": 0
+    },
+    "weights": {
+     "stat": {
+      "STR": 1,
+      "DEX": 0.125
+     },
+     "att": 4,
+     "allPct": 10,
+     "bossPct": 0,
+     "dmgPct": 0
+    },
+    "target": 90,
+    "expected": {
+     "powerful": 0.025638,
+     "reset": 0.045827,
+     "abyssal": 0.069794,
+     "drop": 0.023807000000000002
+    },
+    "expectMismatch": false
+   },
+   {
+    "class": {
+     "main": "LUK",
+     "secondary": [
+      "STR",
+      "DEX"
+     ],
+     "attack": "ATT"
+    },
+    "spec": {
+     "level": 200,
+     "isWeapon": false,
+     "flameAdvantaged": true,
+     "baseAtt": 0
+    },
+    "weights": {
+     "stat": {
+      "STR": 0.125,
+      "DEX": 0.125,
+      "LUK": 1
+     },
+     "att": 4,
+     "allPct": 10,
+     "bossPct": 0,
+     "dmgPct": 0
+    },
+    "target": 120,
+    "expected": {
+     "powerful": 0.015196000000000001,
+     "reset": 0.031091999999999998,
+     "abyssal": 0.048823,
+     "drop": 0.014199999999999999
+    },
+    "expectMismatch": false
+   },
+   {
+    "class": {
+     "main": "INT",
+     "secondary": [
+      "LUK"
+     ],
+     "attack": "MATT"
+    },
+    "spec": {
+     "level": 160,
+     "isWeapon": false,
+     "flameAdvantaged": true,
+     "baseAtt": 0
+    },
+    "weights": {
+     "stat": {
+      "INT": 1,
+      "LUK": 0.125
+     },
+     "att": 4,
+     "allPct": 10,
+     "bossPct": 0,
+     "dmgPct": 0
+    },
+    "target": 110,
+    "expected": {
+     "powerful": 0.009716,
+     "reset": 0.020595,
+     "abyssal": 0.032599,
+     "drop": 0.009105
+    },
+    "expectMismatch": false
+   },
+   {
+    "class": {
+     "main": "STR",
+     "secondary": [
+      "DEX"
+     ],
+     "attack": "ATT"
+    },
+    "spec": {
+     "level": 200,
+     "isWeapon": true,
+     "flameAdvantaged": true,
+     "baseAtt": 0
+    },
+    "weights": {
+     "stat": {
+      "STR": 1,
+      "DEX": 0.125
+     },
+     "att": 0,
+     "allPct": 10,
+     "bossPct": 8,
+     "dmgPct": 12
+    },
+    "target": 150,
+    "expected": {
+     "powerful": 0.03688,
+     "reset": 0.066412,
+     "abyssal": 0.09579499999999999,
+     "drop": 0.034462
+    },
+    "expectMismatch": false
+   },
+   {
+    "class": {
+     "main": "STR",
+     "secondary": [
+      "DEX"
+     ],
+     "attack": "ATT"
+    },
+    "spec": {
+     "level": 160,
+     "isWeapon": true,
+     "flameAdvantaged": true,
+     "baseAtt": 0
+    },
+    "weights": {
+     "stat": {
+      "STR": 1,
+      "DEX": 0.125
+     },
+     "att": 0,
+     "allPct": 10,
+     "bossPct": 8,
+     "dmgPct": 12
+    },
+    "target": 120,
+    "expected": {
+     "powerful": 0.091714,
+     "reset": 0.139172,
+     "abyssal": 0.179666,
+     "drop": 0.085895
+    },
+    "expectMismatch": false
+   }
+  ]
+ },
+ "mathbroVectors": {
+  "source": "MathBro (brendonmay) Flame Calculator, Eternal = Black/meso-reset odds",
+  "url": "https://brendonmay.github.io/flameCalculator/",
+  "note": "Site reports average flames rounded to an integer; check round(1/p) == avg. Non-advantaged case uses 40/40/15/5 line odds on that site vs official 40/40/16/4, so allow +-1.",
+  "cases": [
+   {
+    "class": {
+     "main": "STR",
+     "secondary": [
+      "DEX"
+     ],
+     "attack": "ATT"
+    },
+    "spec": {
+     "level": 200,
+     "isWeapon": false,
+     "flameAdvantaged": true
+    },
+    "weights": {
+     "stat": {
+      "STR": 1,
+      "DEX": 0.125
+     },
+     "att": 4,
+     "allPct": 10,
+     "bossPct": 0,
+     "dmgPct": 0
+    },
+    "source": "reset",
+    "target": 100,
+    "expectedAverageFlames": 13,
+    "expectedMedianFlames": 9,
+    "tolerance": 0
+   },
+   {
+    "class": {
+     "main": "STR",
+     "secondary": [
+      "DEX"
+     ],
+     "attack": "ATT"
+    },
+    "spec": {
+     "level": 200,
+     "isWeapon": false,
+     "flameAdvantaged": true
+    },
+    "weights": {
+     "stat": {
+      "STR": 1,
+      "DEX": 0.125
+     },
+     "att": 4,
+     "allPct": 10,
+     "bossPct": 0,
+     "dmgPct": 0
+    },
+    "source": "reset",
+    "target": 150,
+    "expectedAverageFlames": 311,
+    "expectedMedianFlames": 215,
+    "tolerance": 0
+   },
+   {
+    "class": {
+     "main": "STR",
+     "secondary": [
+      "DEX"
+     ],
+     "attack": "ATT"
+    },
+    "spec": {
+     "level": 160,
+     "isWeapon": false,
+     "flameAdvantaged": true
+    },
+    "weights": {
+     "stat": {
+      "STR": 1,
+      "DEX": 0.125
+     },
+     "att": 4,
+     "allPct": 10,
+     "bossPct": 0,
+     "dmgPct": 0
+    },
+    "source": "reset",
+    "target": 120,
+    "expectedAverageFlames": 99,
+    "expectedMedianFlames": 68,
+    "tolerance": 0
+   },
+   {
+    "class": {
+     "main": "STR",
+     "secondary": [
+      "DEX"
+     ],
+     "attack": "ATT"
+    },
+    "spec": {
+     "level": 250,
+     "isWeapon": false,
+     "flameAdvantaged": true
+    },
+    "weights": {
+     "stat": {
+      "STR": 1,
+      "DEX": 0.125
+     },
+     "att": 4,
+     "allPct": 10,
+     "bossPct": 0,
+     "dmgPct": 0
+    },
+    "source": "reset",
+    "target": 150,
+    "expectedAverageFlames": 124,
+    "expectedMedianFlames": 86,
+    "tolerance": 0
+   },
+   {
+    "class": {
+     "main": "STR",
+     "secondary": [
+      "DEX"
+     ],
+     "attack": "ATT"
+    },
+    "spec": {
+     "level": 250,
+     "isWeapon": false,
+     "flameAdvantaged": true
+    },
+    "weights": {
+     "stat": {
+      "STR": 1,
+      "DEX": 0.125
+     },
+     "att": 4,
+     "allPct": 10,
+     "bossPct": 0,
+     "dmgPct": 0
+    },
+    "source": "reset",
+    "target": 180,
+    "expectedAverageFlames": 1420,
+    "expectedMedianFlames": 984,
+    "tolerance": 0
+   },
+   {
+    "class": {
+     "main": "STR",
+     "secondary": [
+      "DEX"
+     ],
+     "attack": "ATT"
+    },
+    "spec": {
+     "level": 200,
+     "isWeapon": false,
+     "flameAdvantaged": true
+    },
+    "weights": {
+     "stat": {
+      "STR": 1,
+      "DEX": 0.125
+     },
+     "att": 4,
+     "allPct": 10,
+     "bossPct": 0,
+     "dmgPct": 0
+    },
+    "source": "powerful",
+    "target": 100,
+    "expectedAverageFlames": 22,
+    "expectedMedianFlames": 15,
+    "tolerance": 0
+   },
+   {
+    "class": {
+     "main": "STR",
+     "secondary": [
+      "DEX"
+     ],
+     "attack": "ATT"
+    },
+    "spec": {
+     "level": 150,
+     "isWeapon": false,
+     "flameAdvantaged": false
+    },
+    "weights": {
+     "stat": {
+      "STR": 1,
+      "DEX": 0.125
+     },
+     "att": 4,
+     "allPct": 10,
+     "bossPct": 0,
+     "dmgPct": 0
+    },
+    "source": "reset",
+    "target": 40,
+    "expectedAverageFlames": 20,
+    "expectedMedianFlames": 14,
+    "tolerance": 1
+   }
+  ]
+ },
+ "valueVectors": {
+  "source": "WhackyBeanz Flame Calculator per-tier value tables",
+  "url": "https://www.whackybeanz.com/calc/equips/flames",
+  "cases": [
+   {
+    "level": 200,
+    "weaponBaseAtt": 353,
+    "flameAdvantaged": true,
+    "whackybeanz": {
+     "Pure Stats": {
+      "T3": 33,
+      "T4": 44,
+      "T5": 55,
+      "T6": 66,
+      "T7": 77
+     },
+     "Mixed Stats": {
+      "T3": 18,
+      "T4": 24,
+      "T5": 30,
+      "T6": 36,
+      "T7": 42
+     },
+     "Max HP/MP": {
+      "T3": 1800,
+      "T4": 2400,
+      "T5": 3000,
+      "T6": 3600,
+      "T7": 4200
+     },
+     "Weapon WA/MA": {
+      "T3": 64,
+      "T4": 94,
+      "T5": 129,
+      "T6": 170,
+      "T7": 218
+     },
+     "Boss%": {
+      "T3": 6,
+      "T4": 8,
+      "T5": 10,
+      "T6": 12,
+      "T7": 14
+     },
+     "All Stats%": {
+      "T3": 3,
+      "T4": 4,
+      "T5": 5,
+      "T6": 6,
+      "T7": 7
+     }
+    }
+   },
+   {
+    "level": 200,
+    "weaponBaseAtt": 353,
+    "flameAdvantaged": false,
+    "whackybeanz": {
+     "Pure Stats": {
+      "T1": 11,
+      "T2": 22,
+      "T3": 33,
+      "T4": 44,
+      "T5": 55
+     },
+     "Mixed Stats": {
+      "T1": 6,
+      "T2": 12,
+      "T3": 18,
+      "T4": 24,
+      "T5": 30
+     },
+     "Max HP/MP": {
+      "T1": 600,
+      "T2": 1200,
+      "T3": 1800,
+      "T4": 2400,
+      "T5": 3000
+     },
+     "Weapon WA/MA": {
+      "T1": 22,
+      "T2": 47,
+      "T3": 77,
+      "T4": 113,
+      "T5": 156
+     },
+     "Boss%": {
+      "T1": 2,
+      "T2": 4,
+      "T3": 6,
+      "T4": 8,
+      "T5": 10
+     },
+     "All Stats%": {
+      "T1": 1,
+      "T2": 2,
+      "T3": 3,
+      "T4": 4,
+      "T5": 5
+     }
+    }
+   },
+   {
+    "level": 160,
+    "weaponBaseAtt": 283,
+    "flameAdvantaged": true,
+    "whackybeanz": {
+     "Pure Stats": {
+      "T3": 27,
+      "T4": 36,
+      "T5": 45,
+      "T6": 54,
+      "T7": 63
+     },
+     "Mixed Stats": {
+      "T3": 15,
+      "T4": 20,
+      "T5": 25,
+      "T6": 30,
+      "T7": 35
+     },
+     "Max HP/MP": {
+      "T3": 1440,
+      "T4": 1920,
+      "T5": 2400,
+      "T6": 2880,
+      "T7": 3360
+     },
+     "Weapon WA/MA": {
+      "T3": 43,
+      "T4": 63,
+      "T5": 86,
+      "T6": 114,
+      "T7": 146
+     },
+     "Boss%": {
+      "T3": 6,
+      "T4": 8,
+      "T5": 10,
+      "T6": 12,
+      "T7": 14
+     },
+     "All Stats%": {
+      "T3": 3,
+      "T4": 4,
+      "T5": 5,
+      "T6": 6,
+      "T7": 7
+     }
+    }
+   },
+   {
+    "level": 250,
+    "weaponBaseAtt": 400,
+    "flameAdvantaged": true,
+    "whackybeanz": {
+     "Pure Stats": {
+      "T3": 36,
+      "T4": 48,
+      "T5": 60,
+      "T6": 72,
+      "T7": 84
+     },
+     "Mixed Stats": {
+      "T3": 21,
+      "T4": 28,
+      "T5": 35,
+      "T6": 42,
+      "T7": 49
+     },
+     "Max HP/MP": {
+      "T3": 2100,
+      "T4": 2800,
+      "T5": 3500,
+      "T6": 4200,
+      "T7": 4900
+     },
+     "Weapon WA/MA": {
+      "T3": 84,
+      "T4": 124,
+      "T5": 170,
+      "T6": 224,
+      "T7": 287
+     },
+     "Boss%": {
+      "T3": 6,
+      "T4": 8,
+      "T5": 10,
+      "T6": 12,
+      "T7": 14
+     },
+     "All Stats%": {
+      "T3": 3,
+      "T4": 4,
+      "T5": 5,
+      "T6": 6,
+      "T7": 7
+     }
+    }
+   },
+   {
+    "level": 150,
+    "weaponBaseAtt": 200,
+    "flameAdvantaged": false,
+    "whackybeanz": {
+     "Pure Stats": {
+      "T1": 8,
+      "T2": 16,
+      "T3": 24,
+      "T4": 32,
+      "T5": 40
+     },
+     "Mixed Stats": {
+      "T1": 4,
+      "T2": 8,
+      "T3": 12,
+      "T4": 16,
+      "T5": 20
+     },
+     "Max HP/MP": {
+      "T1": 450,
+      "T2": 900,
+      "T3": 1350,
+      "T4": 1800,
+      "T5": 2250
+     },
+     "Weapon WA/MA": {
+      "T1": 8,
+      "T2": 18,
+      "T3": 30,
+      "T4": 43,
+      "T5": 59
+     },
+     "Boss%": {
+      "T1": 2,
+      "T2": 4,
+      "T3": 6,
+      "T4": 8,
+      "T5": 10
+     },
+     "All Stats%": {
+      "T1": 1,
+      "T2": 2,
+      "T3": 3,
+      "T4": 4,
+      "T5": 5
+     }
+    }
+   },
+   {
+    "level": 160,
+    "weaponBaseAtt": 197,
+    "flameAdvantaged": true,
+    "whackybeanz": {
+     "Pure Stats": {
+      "T3": 27,
+      "T4": 36,
+      "T5": 45,
+      "T6": 54,
+      "T7": 63
+     },
+     "Mixed Stats": {
+      "T3": 15,
+      "T4": 20,
+      "T5": 25,
+      "T6": 30,
+      "T7": 35
+     },
+     "Max HP/MP": {
+      "T3": 1440,
+      "T4": 1920,
+      "T5": 2400,
+      "T6": 2880,
+      "T7": 3360
+     },
+     "Weapon WA/MA": {
+      "T3": 30,
+      "T4": 44,
+      "T5": 60,
+      "T6": 79,
+      "T7": 101
+     },
+     "Boss%": {
+      "T3": 6,
+      "T4": 8,
+      "T5": 10,
+      "T6": 12,
+      "T7": 14
+     },
+     "All Stats%": {
+      "T3": 3,
+      "T4": 4,
+      "T5": 5,
+      "T6": 6,
+      "T7": 7
+     }
+    }
+   },
+   {
+    "level": 200,
+    "weaponBaseAtt": 295,
+    "flameAdvantaged": true,
+    "whackybeanz": {
+     "Pure Stats": {
+      "T3": 33,
+      "T4": 44,
+      "T5": 55,
+      "T6": 66,
+      "T7": 77
+     },
+     "Mixed Stats": {
+      "T3": 18,
+      "T4": 24,
+      "T5": 30,
+      "T6": 36,
+      "T7": 42
+     },
+     "Max HP/MP": {
+      "T3": 1800,
+      "T4": 2400,
+      "T5": 3000,
+      "T6": 3600,
+      "T7": 4200
+     },
+     "Weapon WA/MA": {
+      "T3": 54,
+      "T4": 78,
+      "T5": 108,
+      "T6": 142,
+      "T7": 182
+     },
+     "Boss%": {
+      "T3": 6,
+      "T4": 8,
+      "T5": 10,
+      "T6": 12,
+      "T7": 14
+     },
+     "All Stats%": {
+      "T3": 3,
+      "T4": 4,
+      "T5": 5,
+      "T6": 6,
+      "T7": 7
+     }
+    }
+   }
+  ]
+ }
+}

@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="color-scheme" content="light" />
+  <title>MapleStory EV Calculator</title>
+  <meta name="description" content="Rank Star Force, cube, bonus cube and flame upgrades by meso per 1% Final Damage." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><text y='14' font-size='14'>🍁</text></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Manrope:wght@400;500;600;700;800&display=swap" />
+</head>
+<body>
+  <header>
+    <h1>MapleStory EV</h1>
+    <nav>
+      <button id="sample" type="button" class="btn">Sample</button>
+      <button id="export" type="button" class="btn">Export</button>
+      <button id="import" type="button" class="btn">Import</button>
+      <input id="import-file" type="file" accept="application/json" hidden />
+      <button id="reset" type="button" class="btn tonal">Reset</button>
+    </nav>
+  </header>
+  <div class="shell">
+    <aside class="side">
+      <section class="panel">
+        <div class="tabs" role="tablist" aria-label="Sidebar">
+          <button type="button" class="tab on" role="tab" data-tab="character" aria-selected="true">Character</button>
+          <button type="button" class="tab" role="tab" data-tab="settings" aria-selected="false">Settings</button>
+        </div>
+        <div id="character" role="tabpanel"></div>
+        <div id="settings" role="tabpanel" hidden></div>
+      </section>
+    </aside>
+    <section class="card equip"><h2>Equipment <span class="tip" tabindex="0" role="note" data-tip="Click a slot, pick the item, then enter its stars, potential lines and flame. Use ← → to move between slots." aria-label="Click a slot, pick the item, then enter its stars, potential lines and flame.">?</span></h2><div id="equips" class="equipment"></div></section>
+    <main id="results"></main>
+  </div>
+  <footer>
+    Costs are averages (Star Force GMS v.271 rules, Heroic Glowing/Bright cubes, 3M meso flames). FD gain uses only the FD values you enter.
+    Item art © NEXON, via maplestory.io and MapleStory Wiki. Not affiliated with NEXON.
+  </footer>
+  <script type="module" src="/src/main.ts"></script>
+</body>
+</html>
